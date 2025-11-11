@@ -1,0 +1,310 @@
+{
+  "acceptance_rate": 0.9,
+  "buyers": [
+    {
+      "budget": 3143.1913362384225,
+      "id": 0,
+      "max_price": 0.1415059930186625,
+      "storage": 131
+    },
+    {
+      "budget": 4912.984894022793,
+      "id": 1,
+      "max_price": 0.23925689647614784,
+      "storage": 144
+    },
+    {
+      "budget": 2470.754601530422,
+      "id": 2,
+      "max_price": 0.10570593966957972,
+      "storage": 29
+    },
+    {
+      "budget": 2424.4743401182623,
+      "id": 3,
+      "max_price": 0.11089759908838534,
+      "storage": 70
+    },
+    {
+      "budget": 4058.2992917218708,
+      "id": 4,
+      "max_price": 0.1824596817079289,
+      "storage": 32
+    },
+    {
+      "budget": 4092.807336445142,
+      "id": 5,
+      "max_price": 0.18750223480103534,
+      "storage": 48
+    },
+    {
+      "budget": 3313.8926977498695,
+      "id": 6,
+      "max_price": 0.09837138666959097,
+      "storage": 80
+    },
+    {
+      "budget": 4071.257969011913,
+      "id": 7,
+      "max_price": 0.20241904719014608,
+      "storage": 103
+    },
+    {
+      "budget": 4108.488446109843,
+      "id": 8,
+      "max_price": 0.23140678718149585,
+      "storage": 81
+    },
+    {
+      "budget": 470.9477001210921,
+      "id": 9,
+      "max_price": 0.24559130163736947,
+      "storage": 74
+    },
+    {
+      "budget": 3676.2161135157344,
+      "id": 10,
+      "max_price": 0.20521651115708003,
+      "storage": 97
+    },
+    {
+      "budget": 1199.930651752839,
+      "id": 11,
+      "max_price": 0.27691403310852275,
+      "storage": 37
+    },
+    {
+      "budget": 990.2244621548193,
+      "id": 12,
+      "max_price": 0.20713966808988493,
+      "storage": 37
+    },
+    {
+      "budget": 1286.0575564749845,
+      "id": 13,
+      "max_price": 0.06102196602791448,
+      "storage": 97
+    },
+    {
+      "budget": 1399.3999779922124,
+      "id": 14,
+      "max_price": 0.08161302604346024,
+      "storage": 59
+    },
+    {
+      "budget": 4384.7630911599645,
+      "id": 15,
+      "max_price": 0.06992788829045216,
+      "storage": 105
+    },
+    {
+      "budget": 4322.267185167806,
+      "id": 16,
+      "max_price": 0.12097941389907892,
+      "storage": 141
+    },
+    {
+      "budget": 370.3609279130274,
+      "id": 17,
+      "max_price": 0.18641371239452734,
+      "storage": 121
+    },
+    {
+      "budget": 2956.1964401818177,
+      "id": 18,
+      "max_price": 0.21341037609909266,
+      "storage": 52
+    },
+    {
+      "budget": 4046.359127303015,
+      "id": 19,
+      "max_price": 0.14018373776068302,
+      "storage": 21
+    }
+  ],
+  "matches": [
+    {
+      "accepted": true,
+      "buyer_id": 0,
+      "provider_id": 7,
+      "utility": 8.050152202044409
+    },
+    {
+      "accepted": true,
+      "buyer_id": 1,
+      "provider_id": 7,
+      "utility": 8.497619096998248
+    },
+    {
+      "accepted": true,
+      "buyer_id": 2,
+      "provider_id": 7,
+      "utility": 7.811794754945885
+    },
+    {
+      "accepted": true,
+      "buyer_id": 3,
+      "provider_id": 7,
+      "utility": 7.791594684116354
+    },
+    {
+      "accepted": true,
+      "buyer_id": 4,
+      "provider_id": 7,
+      "utility": 8.308168558003894
+    },
+    {
+      "accepted": true,
+      "buyer_id": 5,
+      "provider_id": 7,
+      "utility": 8.316342488311909
+    },
+    {
+      "accepted": true,
+      "buyer_id": 6,
+      "provider_id": 7,
+      "utility": 8.104351465080018
+    },
+    {
+      "accepted": true,
+      "buyer_id": 7,
+      "provider_id": 7,
+      "utility": 8.310035871327772
+    },
+    {
+      "accepted": true,
+      "buyer_id": 8,
+      "provider_id": 7,
+      "utility": 8.319560235665852
+    },
+    {
+      "accepted": true,
+      "buyer_id": 9,
+      "provider_id": 7,
+      "utility": 6.1449244132829834
+    },
+    {
+      "accepted": true,
+      "buyer_id": 10,
+      "provider_id": 7,
+      "utility": 8.207911857299052
+    },
+    {
+      "accepted": true,
+      "buyer_id": 11,
+      "provider_id": 7,
+      "utility": 7.088516453042484
+    },
+    {
+      "accepted": true,
+      "buyer_id": 12,
+      "provider_id": 7,
+      "utility": 6.896110552802683
+    },
+    {
+      "accepted": false,
+      "buyer_id": 13,
+      "provider_id": 18446744073709551615,
+      "utility": -100.0
+    },
+    {
+      "accepted": true,
+      "buyer_id": 14,
+      "provider_id": 7,
+      "utility": 7.241317915809778
+    },
+    {
+      "accepted": false,
+      "buyer_id": 15,
+      "provider_id": 18446744073709551615,
+      "utility": -100.0
+    },
+    {
+      "accepted": true,
+      "buyer_id": 16,
+      "provider_id": 7,
+      "utility": 8.369294075279615
+    },
+    {
+      "accepted": true,
+      "buyer_id": 17,
+      "provider_id": 7,
+      "utility": 5.892193155643097
+    },
+    {
+      "accepted": true,
+      "buyer_id": 18,
+      "provider_id": 7,
+      "utility": 7.990664580180796
+    },
+    {
+      "accepted": true,
+      "buyer_id": 19,
+      "provider_id": 7,
+      "utility": 8.305426922945902
+    }
+  ],
+  "providers": [
+    {
+      "capacity": 3770,
+      "cost": 0.024732196499697906,
+      "id": 0,
+      "price": 0.08552592751225632
+    },
+    {
+      "capacity": 2653,
+      "cost": 0.02396129449603068,
+      "id": 1,
+      "price": 0.14638448013687172
+    },
+    {
+      "capacity": 2228,
+      "cost": 0.03382996718505954,
+      "id": 2,
+      "price": 0.21959967162344116
+    },
+    {
+      "capacity": 2613,
+      "cost": 0.029813783275448348,
+      "id": 3,
+      "price": 0.16486207651916934
+    },
+    {
+      "capacity": 3397,
+      "cost": 0.02108137279674628,
+      "id": 4,
+      "price": 0.1762301141696386
+    },
+    {
+      "capacity": 575,
+      "cost": 0.036336624639140655,
+      "id": 5,
+      "price": 0.14509251336176748
+    },
+    {
+      "capacity": 3955,
+      "cost": 0.03370789330585425,
+      "id": 6,
+      "price": 0.14554708307728553
+    },
+    {
+      "capacity": 3716,
+      "cost": 0.038869649125155455,
+      "id": 7,
+      "price": 0.0757202950310555
+    },
+    {
+      "capacity": 1652,
+      "cost": 0.02801264858386597,
+      "id": 8,
+      "price": 0.18919661665799434
+    },
+    {
+      "capacity": 879,
+      "cost": 0.02799014297917408,
+      "id": 9,
+      "price": 0.1724229125379091
+    }
+  ],
+  "seed": 2025
+}

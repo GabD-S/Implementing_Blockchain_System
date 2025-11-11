@@ -1,0 +1,86 @@
+{
+  "Economia Pequena": {
+    "config": {
+      "name": "Economia Pequena",
+      "buyers": 15,
+      "providers": 8,
+      "network_agents": 3,
+      "simulation_time": 120,
+      "transaction_rate": 4
+    },
+    "metrics": {
+      "total_transactions": 480,
+      "successful_transactions": 46,
+      "success_rate": 0.09745804031128921,
+      "total_volume": 894.2203024577149,
+      "avg_transaction_value": 19.43957179255902,
+      "avg_latency_ms": 66.64222133127974,
+      "throughput_tps": 0.38333333333333336,
+      "execution_time": 0.862631864306848,
+      "total_agents": 26
+    }
+  },
+  "Economia M\u00e9dia": {
+    "config": {
+      "name": "Economia M\u00e9dia",
+      "buyers": 35,
+      "providers": 15,
+      "network_agents": 6,
+      "simulation_time": 180,
+      "transaction_rate": 7
+    },
+    "metrics": {
+      "total_transactions": 1260,
+      "successful_transactions": 164,
+      "success_rate": 0.13061732620108757,
+      "total_volume": 5007.335445873922,
+      "avg_transaction_value": 30.532533206548308,
+      "avg_latency_ms": 91.71638762050378,
+      "throughput_tps": 0.9111111111111111,
+      "execution_time": 1.9734826093522442,
+      "total_agents": 56
+    }
+  },
+  "Economia Grande": {
+    "config": {
+      "name": "Economia Grande",
+      "buyers": 70,
+      "providers": 28,
+      "network_agents": 12,
+      "simulation_time": 240,
+      "transaction_rate": 10
+    },
+    "metrics": {
+      "total_transactions": 2400,
+      "successful_transactions": 261,
+      "success_rate": 0.10909365253625851,
+      "total_volume": 8627.10445770643,
+      "avg_transaction_value": 33.054040067840724,
+      "avg_latency_ms": 141.89528763048082,
+      "throughput_tps": 1.0875,
+      "execution_time": 1.9255362998335388,
+      "total_agents": 110
+    }
+  },
+  "Economia Massiva": {
+    "config": {
+      "name": "Economia Massiva",
+      "buyers": 120,
+      "providers": 45,
+      "network_agents": 18,
+      "simulation_time": 300,
+      "transaction_rate": 15
+    },
+    "metrics": {
+      "total_transactions": 4500,
+      "successful_transactions": 576,
+      "success_rate": 0.12822013433911855,
+      "total_volume": 25289.127961607202,
+      "avg_transaction_value": 43.904736044456946,
+      "avg_latency_ms": 194.9516701339021,
+      "throughput_tps": 1.92,
+      "execution_time": 1.1003203052343473,
+      "total_agents": 183
+    }
+  }
+}

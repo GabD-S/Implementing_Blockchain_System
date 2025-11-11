@@ -1,0 +1,469 @@
+{
+  "acceptance_rate": 1.0,
+  "buyers": [
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 0,
+      "lambda": 2.25,
+      "ref_point": 5711.453253346945,
+      "storage": 33
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 1,
+      "lambda": 2.25,
+      "ref_point": 5443.847840287525,
+      "storage": 39
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 2,
+      "lambda": 2.25,
+      "ref_point": 5661.254098337056,
+      "storage": 51
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 3,
+      "lambda": 2.25,
+      "ref_point": 5185.303730450097,
+      "storage": 39
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 4,
+      "lambda": 2.25,
+      "ref_point": 3552.017504378316,
+      "storage": 64
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 5,
+      "lambda": 2.25,
+      "ref_point": 5333.240375502337,
+      "storage": 150
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 6,
+      "lambda": 2.25,
+      "ref_point": 1946.2675061619352,
+      "storage": 133
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 7,
+      "lambda": 2.25,
+      "ref_point": 1884.268470644908,
+      "storage": 78
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 8,
+      "lambda": 2.25,
+      "ref_point": 942.3614551940012,
+      "storage": 22
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 9,
+      "lambda": 2.25,
+      "ref_point": 698.9714410184115,
+      "storage": 100
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 10,
+      "lambda": 2.25,
+      "ref_point": 2774.6563202318102,
+      "storage": 45
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 11,
+      "lambda": 2.25,
+      "ref_point": 5905.561744324259,
+      "storage": 169
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 12,
+      "lambda": 2.25,
+      "ref_point": 1653.7132727087383,
+      "storage": 114
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 13,
+      "lambda": 2.25,
+      "ref_point": 4671.088002354398,
+      "storage": 55
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 14,
+      "lambda": 2.25,
+      "ref_point": 4599.771625808778,
+      "storage": 76
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 15,
+      "lambda": 2.25,
+      "ref_point": 2524.9001106732503,
+      "storage": 47
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 16,
+      "lambda": 2.25,
+      "ref_point": 927.2463327549593,
+      "storage": 75
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 17,
+      "lambda": 2.25,
+      "ref_point": 2993.4110523897407,
+      "storage": 157
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 18,
+      "lambda": 2.25,
+      "ref_point": 1627.7272269900209,
+      "storage": 107
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 19,
+      "lambda": 2.25,
+      "ref_point": 3159.527170272486,
+      "storage": 92
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 20,
+      "lambda": 2.25,
+      "ref_point": 2584.8636696848616,
+      "storage": 126
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 21,
+      "lambda": 2.25,
+      "ref_point": 4782.149972553669,
+      "storage": 82
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 22,
+      "lambda": 2.25,
+      "ref_point": 3553.860797984008,
+      "storage": 101
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 23,
+      "lambda": 2.25,
+      "ref_point": 1722.8797576650522,
+      "storage": 129
+    },
+    {
+      "alpha": 0.88,
+      "beta": 0.88,
+      "id": 24,
+      "lambda": 2.25,
+      "ref_point": 3190.4016507710808,
+      "storage": 20
+    }
+  ],
+  "decisions": [
+    {
+      "accepted": true,
+      "buyer_id": 0,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 2021.7632678156388
+    },
+    {
+      "accepted": true,
+      "buyer_id": 1,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1937.9426341332685
+    },
+    {
+      "accepted": true,
+      "buyer_id": 2,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 2005.5835437753503
+    },
+    {
+      "accepted": true,
+      "buyer_id": 3,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1856.659084856926
+    },
+    {
+      "accepted": true,
+      "buyer_id": 4,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1329.7593174054975
+    },
+    {
+      "accepted": true,
+      "buyer_id": 5,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1899.9617017013024
+    },
+    {
+      "accepted": true,
+      "buyer_id": 6,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 779.9127283532464
+    },
+    {
+      "accepted": true,
+      "buyer_id": 7,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 759.699889214671
+    },
+    {
+      "accepted": true,
+      "buyer_id": 8,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 413.4999189117138
+    },
+    {
+      "accepted": true,
+      "buyer_id": 9,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 314.75469916690054
+    },
+    {
+      "accepted": true,
+      "buyer_id": 10,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1070.1472225040732
+    },
+    {
+      "accepted": true,
+      "buyer_id": 11,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 2078.188153997923
+    },
+    {
+      "accepted": true,
+      "buyer_id": 12,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 675.7268433571171
+    },
+    {
+      "accepted": true,
+      "buyer_id": 13,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1693.037105351418
+    },
+    {
+      "accepted": true,
+      "buyer_id": 14,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1669.6154303009214
+    },
+    {
+      "accepted": true,
+      "buyer_id": 15,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 984.7102853475982
+    },
+    {
+      "accepted": true,
+      "buyer_id": 16,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 405.72098039316376
+    },
+    {
+      "accepted": true,
+      "buyer_id": 17,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1140.632380807965
+    },
+    {
+      "accepted": true,
+      "buyer_id": 18,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 666.5507251499184
+    },
+    {
+      "accepted": true,
+      "buyer_id": 19,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1198.4625377979203
+    },
+    {
+      "accepted": true,
+      "buyer_id": 20,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1002.7611983172235
+    },
+    {
+      "accepted": true,
+      "buyer_id": 21,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1727.6452326403337
+    },
+    {
+      "accepted": true,
+      "buyer_id": 22,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1329.2248000430345
+    },
+    {
+      "accepted": true,
+      "buyer_id": 23,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 700.1912596295924
+    },
+    {
+      "accepted": true,
+      "buyer_id": 24,
+      "perceived_fairness": 0.867348542664924,
+      "provider_id": 1,
+      "value_fn": 1211.0431504959718
+    }
+  ],
+  "providers": [
+    {
+      "capacity": 4448,
+      "fairness_threshold": 0.11354267886410858,
+      "id": 0,
+      "price": 0.10841625110768426,
+      "reputation": 0.6574926009279134
+    },
+    {
+      "capacity": 2426,
+      "fairness_threshold": 0.13686117220816862,
+      "id": 1,
+      "price": 0.09359459408421636,
+      "reputation": 0.867348542664924
+    },
+    {
+      "capacity": 4604,
+      "fairness_threshold": 0.1443557637416762,
+      "id": 2,
+      "price": 0.10645112224974312,
+      "reputation": 0.6471520611234978
+    },
+    {
+      "capacity": 3827,
+      "fairness_threshold": 0.14547213422703167,
+      "id": 3,
+      "price": 0.20513962554246912,
+      "reputation": 0.8374060394997074
+    },
+    {
+      "capacity": 1856,
+      "fairness_threshold": 0.1398039109883799,
+      "id": 4,
+      "price": 0.16538694199840898,
+      "reputation": 0.8853837860117258
+    },
+    {
+      "capacity": 2225,
+      "fairness_threshold": 0.13285152472791883,
+      "id": 5,
+      "price": 0.14099531700743145,
+      "reputation": 0.5313253387861435
+    },
+    {
+      "capacity": 932,
+      "fairness_threshold": 0.10493269588641067,
+      "id": 6,
+      "price": 0.15939038501570088,
+      "reputation": 0.5014344803170784
+    },
+    {
+      "capacity": 1399,
+      "fairness_threshold": 0.10330950348776881,
+      "id": 7,
+      "price": 0.10849374060812095,
+      "reputation": 0.8439676861378321
+    },
+    {
+      "capacity": 2612,
+      "fairness_threshold": 0.12886769756611208,
+      "id": 8,
+      "price": 0.1799624314840904,
+      "reputation": 0.7059818326427619
+    },
+    {
+      "capacity": 3361,
+      "fairness_threshold": 0.12460831090529151,
+      "id": 9,
+      "price": 0.15788281335554852,
+      "reputation": 0.7653096227140141
+    },
+    {
+      "capacity": 4719,
+      "fairness_threshold": 0.12128095394678719,
+      "id": 10,
+      "price": 0.17195176766345988,
+      "reputation": 0.40202237719668876
+    },
+    {
+      "capacity": 2660,
+      "fairness_threshold": 0.1359595865850104,
+      "id": 11,
+      "price": 0.15036555717802805,
+      "reputation": 0.5314802927600402
+    }
+  ],
+  "seed": 2032
+}

@@ -1,0 +1,122 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- PREÂMBULO ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\usepackage{graphicx} % Para incluir imagens
+\usepackage{amsmath}  % Para fórmulas matemáticas
+\usepackage{float}    % Para melhor controle de flutuação [H]
+
+% Configuração de margens
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+}
+
+% Permite parágrafos com indentação e espaçamento
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.2\baselineskip}
+
+% Título
+\title{Análise Comportamental da Simulação de Mercado Descentralizado}
+\author{Blockchain-Pesquisa (Análise de Simulação Rust)}
+\date{\today}
+
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+\maketitle
+
+\section{Análise dos Resultados da Simulação}
+
+A análise dos resultados da simulação (arquivo \texttt{comportamental\_resultados.json}) revela uma conclusão clara e fundamental:
+
+\textbf{A simulação, no estado atual, não está modelando um mercado \textit{comportamental}; ela está modelando um mercado perfeitamente \textit{racional} onde um provedor é tão superior que todos os compradores, agindo logicamente, o escolhem.}
+
+Isto é revelado por duas descobertas principais nos dados:
+\begin{enumerate}
+    \item \textbf{Taxa de Aceitação de 100\%:} Todos os 25 compradores encontraram e aceitaram uma oferta.
+    \item \textbf{Monopólio de Mercado:} Todos os 25 compradores escolheram o \texttt{provider\_id: 1}.
+\end{enumerate}
+
+\section{Expectativa vs. Realidade}
+
+\begin{itemize}
+    \item \textbf{A Expectativa (Teoria Comportamental):} Esperávamos ver uma distribuição de escolhas. Alguns compradores com orçamentos apertados (\texttt{ref\_point} baixo) poderiam \textit{recusar} todas as ofertas, sentindo-as como uma "perda" (resultando em \texttt{accepted: false}). Compradores diferentes poderiam escolher provedores diferentes, talvez alguns preferindo uma \texttt{reputation} (reputação) um pouco maior por um \texttt{price} (preço) um pouco maior.
+
+    \item \textbf{A Realidade (Modelo Racional):} Como o \texttt{provider\_id: 1} tem uma combinação de preço muito baixo (R\$ 0.093/GB) e reputação muito alta (0.867), ele é o "vencedor" objetivo. Para \textit{todos} os compradores, o custo total foi tão baixo em relação ao seu \texttt{ref\_point} (orçamento) que a transação foi sempre percebida como um "ganho" (\texttt{value\_fn} positivo). A aversão à perda, o cerne da Teoria da Perspectiva, nunca foi ativada.
+\end{itemize}
+
+\section{Análise Gráfica dos Resultados}
+
+\subsection{Gráfico 1: O Cenário dos Provedores (Por que o Provedor 1 Venceu?)}
+
+O primeiro gráfico plota todos os provedores disponíveis em um gráfico de Preço (Price) vs. Reputação (Reputation). O "provedor ideal" estaria no canto inferior direito (baixo preço, alta reputação).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{graficos_analise_comportamental/provider_landscape.png}
+    \caption{Cenário de Mercado: Preço vs. Reputação dos Provedores.}
+    \label{fig:landscape}
+\end{figure}
+
+\textbf{Conclusão do Gráfico 1:} Como suspeitado, o \textbf{Provedor 1} é um ponto fora da curva. Ele está localizado no "quadrante dourado" (canto inferior direito), possuindo simultaneamente uma das reputações mais altas e um dos preços mais baixos. Dado este cenário, qualquer comprador (racional \textit{ou} comportamental) que valorize tanto o preço quanto a reputação escolherá o Provedor 1, pois ele domina objetivamente as outras opções.
+
+\subsection{Gráfico 2: A Percepção do Comprador}
+
+Estes gráficos mostram a "função de valor" (\texttt{value\_fn} - o resultado da fórmula da Teoria da Perspectiva) em relação ao orçamento e ao armazenamento solicitado.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{graficos_analise_comportamental/buyer_perception.png}
+    \caption{Análise da Percepção de Valor do Comprador.}
+    \label{fig:perception}
+\end{figure}
+
+\textbf{Conclusão do Gráfico 2:} Estes gráficos confirmam que a fórmula da Teoria da Perspectiva está funcionando \textit{conforme programada}:
+\begin{enumerate}
+    \item \textbf{Valor vs. Orçamento (Gráfico Esquerdo):} Há uma forte correlação positiva. Quanto maior o orçamento (\texttt{ref\_point}) do comprador, maior o "ganho" percebido (\texttt{value\_fn}).
+    \item \textbf{Valor vs. Armazenamento (Gráfico Direito):} Há uma correlação negativa. Quanto mais armazenamento o comprador pedia, menor era o seu "ganho" percebido.
+\end{enumerate}
+O ponto crucial é que \textbf{todos os valores \texttt{value\_fn} são altamente positivos}, muito longe do limiar de "perda".
+
+\subsection{Gráfico 3: A Causa Raiz - Distribuição de Parâmetros}
+
+A causa para este mercado "perfeito" está na inicialização dos parâmetros via \texttt{rng.gen\_range}, que cria uma \textbf{distribuição uniforme}. No mundo real, os parâmetros não são uniformes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{graficos_analise_comportamental/parameter_distributions.png}
+    \caption{Análise da Distribuição dos Parâmetros (Todos Uniformes).}
+    \label{fig:distributions}
+\end{figure}
+
+\textbf{Conclusão do Gráfico 3:} Como os gráficos mostram, todas as suas variáveis de entrada são \textbf{distribuídas uniformemente}. Não há "agrupamentos". Os preços estão espalhados, as reputações estão espalhadas, e os orçamentos estão espalhados. Este tipo de distribuição torna altamente provável a ocorrência de outliers "perfeitos" (como o Provedor 1) e não simula um mercado realista.
+
+\section{Conclusão Definitiva e Próximos Passos}
+
+\textbf{Conclusão:} A implementação da fórmula da Teoria da Perspectiva está correta. No entanto, os \textbf{parâmetros de entrada uniformes} e a \textbf{ausência de restrições de mercado} (como capacidade limitada ou orçamentos mais apertados) criaram um cenário "racional" de "vencedor-leva-tudo", que impediu o surgimento de comportamentos de aversão à perda.
+
+\textbf{Ações Recomendadas (para fazer a PT emergir):}
+\begin{enumerate}
+    \item \textbf{Implementar Distribuições Estocásticas:}
+    \begin{itemize}
+        \item \textbf{Orçamentos (\texttt{ref\_point}) e Capacidades (\texttt{capacity}):} Use a \textbf{Distribuição Log-Normal} (ex: \texttt{numpy.random.lognormal}). Isso criará muitos compradores/provedores pequenos e alguns grandes (cauda longa).
+        \item \textbf{Preços (\texttt{price}) e Reputação (\texttt{reputation}):} Use a \textbf{Distribuição Normal Truncada} ou \textbf{Distribuição Beta}. Isso agrupará a maioria dos provedores em torno de uma média, tornando a competição mais acirrada.
+    \end{itemize}
+    \item \textbf{Apertar o Ponto de Referência (Orçamento):} O maior problema é que os orçamentos são muito altos. Um comprador não sentirá "perda" se o preço for trivial. Tente vincular o orçamento ao armazenamento:
+    \begin{itemize}
+        \item $\text{preço\_esperado\_mercado} = 0.15$
+        \item $\text{ref\_point\_base} = \text{storage} \times \text{preço\_esperado\_mercado}$
+        \item $\text{ref\_point\_final} = \text{ref\_point\_base} \times (1.0 + \text{variação\_aleatória\_normal})$
+    \end{itemize}
+    Dessa forma, o \texttt{ref\_point} de um comprador estará "próximo" do preço de mercado, forçando a Teoria da Perspectiva a avaliar "ganhos" e "perdas" pequenos.
+\end{enumerate}
+
+% --- FIM DO DOCUMENTO ---
+\end{document}

@@ -1,0 +1,285 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- PREÂMBULO ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{tocloft}
+
+% Configuração de margens
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=25mm,
+ right=25mm,
+ top=25mm,
+ bottom=25mm,
+}
+
+% Espaçamento entre linhas
+\onehalfspacing
+
+% Configuração de cores
+\definecolor{darkblue}{RGB}{0, 51, 102}
+\definecolor{lightblue}{RGB}{230, 242, 255}
+\definecolor{accentcolor}{RGB}{0, 102, 204}
+
+% Formatação de títulos
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{darkblue}}
+{\thesection}{1em}{}[\titlerule]
+
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{accentcolor}}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries\color{accentcolor}}
+{\thesubsubsection}{1em}{}
+
+% Cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textcolor{darkblue}{\textbf{Simulação de Mercado}}}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\headrule}{\color{accentcolor}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}
+
+% Permite parágrafos com indentação
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0.3\baselineskip}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% ====== CAPA 1 ======
+\thispagestyle{empty}
+\begin{center}
+\vspace*{3cm}
+
+{\Huge\bfseries\color{darkblue} Simulação de Mercado}
+
+\vspace{0.5cm}
+
+{\Large\color{accentcolor} Duas Abordagens Teóricas}
+
+\vspace{3cm}
+
+{\Large\bfseries Abordagem 1}
+
+{\huge\color{accentcolor} Teoria Racional Integrada}
+
+\vspace{2cm}
+
+{\large\color{darkblue} Fundamentos Teóricos e Modelagem de Agentes Econômicos}
+
+\vspace{4cm}
+
+\end{center}
+
+\newpage
+
+% ====== RESUMO 1 ======
+\section*{Resumo da Abordagem 1}
+\addcontentsline{toc}{section}{Resumo da Abordagem 1}
+
+\noindent\fcolorbox{accentcolor}{lightblue}{%
+\parbox{\textwidth}{
+\textbf{Objetivo:} Esta primeira abordagem estabelece os fundamentos teóricos para modelar o comportamento de agentes em simulações de mercado, integrando a Teoria da Utilidade Esperada, Teoria dos Jogos e conceitos comportamentais clássicos.
+
+\vspace{0.3cm}
+
+\textbf{Foco:} Desenvolvimento de uma base sólida para entender como agentes econômicos tomam decisões racionais e como essas decisões podem ser modeladas em ambientes simulados.
+
+\vspace{0.3cm}
+
+\textbf{Aplicação:} Ideal para cenários onde a compreensão das mecânicas econômicas fundamentais é necessária antes de introduzir complexidades comportamentais.
+}}
+
+\vspace{1.5cm}
+
+\section{Como Aplicar Estas Teorias na Simulação}
+
+Para modelar o comportamento dos agentes e as falhas realistas do mercado (como ``preço alto'' ou ``reputação baixa''), a simulação deve integrar as teorias econômicas de forma estruturada.
+
+\subsection{Fundamentação Teórica}
+
+A modelagem de agentes em simulações de mercado repousa em três pilares teóricos principais:
+
+\begin{enumerate}
+    \item \textbf{Teoria da Utilidade Esperada (EUT)} --- Fornece a base para entender como agentes racionais avaliam alternativas e tomam decisões sob incerteza. Embora limitada em sua capacidade de descrever comportamentos reais, serve como ponto de referência para comparações com modelos comportamentais.
+
+    \item \textbf{Teoria dos Jogos} --- Permite modelar interações estratégicas entre agentes, particularmente entre provedores em ambientes competitivos. O conceito de Equilíbrio de Nash é fundamental para prever comportamentos de preço e estratégias de mercado.
+
+    \item \textbf{Economia Comportamental} --- Incorpora a compreensão de que agentes reais desviam da racionalidade perfeita, introduzindo elementos de psicologia econômica e tomada de decisão limitada.
+\end{enumerate}
+
+\subsection{Implementação para Compradores}
+
+\noindent\textbf{Use a Teoria da Utilidade Esperada (EUT)} para seus agentes \texttt{Compradores} como baseline racional. Humanos reais não se comportam assim, como demonstrado por múltiplos paradoxos e experimentos. Esta abordagem oferece uma referência para comparação futura com modelos mais sofisticados.
+
+A utilidade esperada de um comprador ao aceitar um preço $P$ é expressa por:
+
+\begin{equation}
+U = \sum_{i} p_i \cdot u(x_i)
+\end{equation}
+
+\noindent onde $p_i$ é a probabilidade de cada resultado $x_i$ e $u(x_i)$ é a utilidade associada.
+
+\subsection{Implementação para Provedores}
+
+\noindent\textbf{Use a Teoria dos Jogos (Equilíbrio de Nash)} para modelar os \texttt{Provedores}. Eles estão em um jogo competitivo onde cada provedor define seu preço ($P_{\text{provedor}}$) com base no preço esperado dos concorrentes ($P_{\text{concorrentes}}$) para maximizar lucro:
+
+\begin{equation}
+\text{Lucro} = (P_{\text{provedor}} - \text{Custo}) \cdot \pi(P_{\text{provedor}} \le P_{\text{comprador}})
+\end{equation}
+
+\noindent onde $\pi$ representa a probabilidade de aceitação do comprador.
+
+Em equilíbrio de Nash, nenhum provedor pode melhorar sua posição alterando unilateralmente seu preço, dada a estratégia dos concorrentes.
+
+\subsection{Identificação de Falhas de Mercado}
+
+As negociações falham no mundo real quando há desalinhamento entre as expectativas dos agentes e a realidade do mercado. Esta abordagem racional identifica falhas através de:
+
+\begin{itemize}
+    \item Assimetria de informação entre compradores e provedores
+    \item Divergência entre o preço de equilíbrio teórico e ofertas concretas
+    \item Ineficiências causadas pela racionalidade limitada dos agentes
+\end{itemize}
+
+\newpage
+
+% ====== CAPA 2 ======
+\thispagestyle{empty}
+\begin{center}
+\vspace*{3cm}
+
+{\Huge\bfseries\color{darkblue} Simulação de Mercado}
+
+\vspace{0.5cm}
+
+{\Large\color{accentcolor} Duas Abordagens Teóricas}
+
+\vspace{3cm}
+
+{\Large\bfseries Abordagem 2}
+
+{\huge\color{accentcolor} Teoria Comportamental Avançada}
+
+\vspace{2cm}
+
+{\large\color{darkblue} Integração de Vieses Psicológicos e Dinâmicas Realistas}
+
+\vspace{4cm}
+
+\end{center}
+
+\newpage
+
+% ====== RESUMO 2 ======
+\section*{Resumo da Abordagem 2}
+\addcontentsline{toc}{section}{Resumo da Abordagem 2}
+
+\noindent\fcolorbox{accentcolor}{lightblue}{%
+\parbox{\textwidth}{
+\textbf{Objetivo:} Esta segunda abordagem incorpora elementos avançados de economia comportamental, especialmente a Teoria da Perspectiva, para capturar vieses psicológicos reais que afetam as decisões de mercado.
+
+\vspace{0.3cm}
+
+\textbf{Foco:} Modelagem realista de compradores e provedores considerando aversão à perda, pontos de referência individualizados e comportamentos que violam a racionalidade econômica clássica.
+
+\vspace{0.3cm}
+
+\textbf{Aplicação:} Apropriada para simulações que buscam reproduzir falhas realistas de mercado, rejeições de ofertas economicamente justificadas e fenômenos de contágio comportamental.
+}}
+
+\vspace{1.5cm}
+
+\section{Aplicação na Simulação}
+
+\subsection{Princípios Fundamentais da Abordagem Comportamental}
+
+A abordagem comportamental avançada reconhece que os agentes reais não são maximizadores racionais perfeitos. Em vez disso, eles operam dentro de limites cognitivos, utilizam heurísticas e são influenciados por vieses psicológicos profundos.
+
+\subsubsection{Implementação para Compradores}
+
+\noindent\textbf{Use a Teoria da Perspectiva (PT)} para modelar seus \texttt{Compradores}. A ``capacidade financeira'' (orçamento) deles deve ser o \textbf{ponto de referência} $v(0)$. A decisão de aceitar um preço do \texttt{Provedor} será baseada em:
+
+\begin{equation}
+v(\text{PreçoOfertado} - \text{PontoDeReferência})
+\end{equation}
+
+A função de valor na Teoria da Perspectiva é assimétrica:
+
+\begin{equation}
+v(x) = \begin{cases}
+x^{\alpha} & \text{se } x \geq 0 \text{ (ganhos)} \\
+-\lambda(-x)^{\beta} & \text{se } x < 0 \text{ (perdas)}
+\end{cases}
+\end{equation}
+
+\noindent onde $\lambda > 1$ (tipicamente $\lambda \approx 2.25$) representa a aversão à perda.
+
+\vspace{0.5cm}
+
+\noindent\textbf{Exemplo Prático:} Um comprador com R\$ 500 (capacidade) rejeitará um preço que um comprador com R\$ 5000 (capacidade) aceitaria, mesmo que ambos busquem o mesmo serviço. O primeiro agente enquadra o preço como uma ``perda'' significativa em relação ao seu ponto de referência, enquanto o segundo o vê como trivial. Isso decorre da aversão à perda, não de uma diferença de racionalidade.
+
+\subsubsection{Implementação para Provedores}
+
+\noindent\textbf{Use a Teoria dos Jogos Comportamental} para modelar \texttt{Provedores} que não apenas maximizam lucro, mas também considerem reputação e aceitação social. Um provedor que cobra preços ``injustos'' sofre perda de reputação mesmo que economicamente racional.
+
+A estratégia de preço deve considerar:
+
+\begin{equation}
+\text{Payoff}_{\text{provedor}} = \text{Lucro} - \text{Penalidade}_{\text{reputação}}(\text{preço percebido como injusto})
+\end{equation}
+
+\subsubsection{Modelagem de Falhas Realistas}
+
+O motivo pelo qual as negociações falham no mundo real é a \textbf{Teoria dos Jogos Comportamental} --- a mistura de Teoria da Perspectiva e Teoria dos Jogos. A falha ocorre quando:
+
+\begin{itemize}
+    \item O \texttt{Comprador} (via Teoria da Perspectiva) sente que o preço do \texttt{Provedor} é uma ``perda'' injusta e o \textit{pune} (recusa), mesmo que o preço esteja objetivamente abaixo do seu orçamento, violando o Jogo do Ultimato.
+    
+    \item O \texttt{Provedor} (via Teoria dos Jogos) define um preço que \textit{seria} racional se o comprador fosse 100\% racional, mas falha ao não considerar a psicologia de ``aversão à perda'' do comprador.
+    
+    \item A \textbf{punição altruísta} ocorre: compradores rejeitam ofertas injustas para punir provedores gananciosos, mesmo que isso lhes custe pessoalmente.
+\end{itemize}
+
+\subsection{Recomendações de Implementação}
+
+\subsubsection{Inicialização e Dados}
+
+Utilize um gerador de população sintética (Monte Carlo ou Latin Hypercube Sampling) para inicializar os agentes compradores e provedores, garantindo reprodutibilidade através de seeds fixas.
+
+\subsubsection{Modelagem de Decisões}
+
+Modele a decisão de escolha dos compradores via Modelo de Utilidade Aleatória (RUM) ajustado com a Teoria da Perspectiva para capturar tanto racionalidade econômica quanto vieses comportamentais.
+
+\subsubsection{Dinâmica Temporal}
+
+Simule a chegada temporal de demandas através de Processos de Hawkes, representando picos de atividade e efeitos de contágio no mercado.
+
+\subsubsection{Gestão de Reputação}
+
+Atualize a reputação dos provedores de forma incremental com base em um modelo Beta-Bayesiano, ajustando a cada transação bem-sucedida ou falha. Para ambientes distribuídos, implemente o cálculo periódico de reputação global via algoritmo EigenTrust, reforçando a confiança sistêmica.
+
+\subsubsection{Calibração e Validação}
+
+Calibre os coeficientes de sensibilidade ao preço, reputação e latência a partir de dados empíricos ou rodadas de simulação inicial para ajustar o comportamento dos agentes.
+
+Utilize funções de utilidade normalizadas e thresholds de reputação individualizados para cada comprador, promovendo diversidade comportamental no sistema.
+
+\subsubsection{Reprodutibilidade}
+
+Salve as distribuições amostradas (como budgets, capacidades e preços) para replicar e comparar cenários futuros de simulação.
+
+\end{document}

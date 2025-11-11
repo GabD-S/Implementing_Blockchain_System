@@ -1,0 +1,1 @@
+/home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Racional_integrada/rust/target/debug/racional_simulacao: /home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Racional_integrada/rust/src/bin/racional_simulacao.rs

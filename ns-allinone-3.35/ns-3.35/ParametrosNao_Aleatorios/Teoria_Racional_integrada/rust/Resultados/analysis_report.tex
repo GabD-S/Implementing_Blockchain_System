@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\title{Análise dos Resultados - Simulação Racional}
+\author{Gerado automaticamente}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Resumo rápido dos resultados (extraído do arquivo)}
+\begin{itemize}
+  \item \textbf{Taxa de aceitação:} 0.9 (90\%).
+  \item \textbf{Amostra:} 20 compradores, 10 provedores, 20 tentativas de match.
+  \item \textbf{Matches aceitas:} 18 (confirmando acceptance\_rate = 0.9).
+  \item \textbf{Concentração:} a maioria das matches aceitas foi para o \textbf{provedor 7} — forte concentração de demanda.
+  \item \textbf{Preço do provedor 7:} 0.0757202950310555 R\$/GB (um dos menores).
+  \item \textbf{Preço médio que compradores aceitam (avg max\_price):} 0.16539686001555193 R\$/GB.
+  \item \textbf{Utilities das matches aceitas:} maioria entre aproximadamente 6 e 8 (alto valor de utilidade).
+\end{itemize}
+
+\section{Interpretação e implicações}
+Os compradores tendem a aceitar provedores com preço significativamente abaixo do seu \textit{max\_price}. A forte concentração em um provedor com preço competitivo reduz custo para compradores e aumenta receita desse provedor, porém gera \textbf{risco sistêmico} (dependência de um único nó). Recomenda-se avaliar mecanismos para balanceamento de carga (limites de alocação, comissões por volume, ou termos de utilidade que penalizem sobrecarga).
+
+\section{Recomendações de experimentos futuros}
+\begin{itemize}
+  \item Rodar experimentos de sensibilidade variando os preços dos provedores e os thresholds de reputação dos compradores e medir:
+    \begin{itemize}
+      \item Gini da distribuição de matches por provedor;
+      \item Participação do top-1, top-3 providers;
+      \item Receita total e média por provedor.
+    \end{itemize}
+  \item Introduzir termo de custo por utilização no utilitário do provedor (ex.: $-\\gamma \\cdot utilization$) para incentivar distribuição de carga.
+  \item Testar comissões dependentes do volume (taxa decrescente) para reduzir risco de centralização.
+  \item Calibrar os parâmetros do modelo (\\(\\beta_{price}\\), \\(\\beta_{rep}\\), etc.) a partir de logs reais ou rodadas de simulação.
+\end{itemize}
+
+\section{Instruções para reproduzir os gráficos}
+Coloque o arquivo \texttt{racional_resultados.json} no mesmo diretório dos scripts. Cada script \texttt{*.py} gera um gráfico específico e salva uma imagem PNG. Execute, por exemplo:
+\begin{verbatim}
+python3 analyze_racional.py
+\end{verbatim}
+Isto criará a pasta \texttt{plots_racional} com todos os PNGs, CSVs e o GIF de animação.
+
+\section{Observações finais}
+\begin{itemize}
+  \item Verificar características de latência e reputação no cálculo da utilidade se quiser desviar demanda de provedores muito baratos mas ruins em QoS.
+  \item Salvar seeds e amostras para garantir reprodutibilidade entre rodadas de simulação.
+  \item Calibrar o modelo antes de usar previsões quantitativas para decisões de produção.
+\end{itemize}
+
+\end{document}

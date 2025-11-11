@@ -1,0 +1,1 @@
+/home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Comportamental_Avançada/rust/target/debug/comportamental_simulacao: /home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Comportamental_Avançada/rust/src/bin/comportamental_simulacao.rs

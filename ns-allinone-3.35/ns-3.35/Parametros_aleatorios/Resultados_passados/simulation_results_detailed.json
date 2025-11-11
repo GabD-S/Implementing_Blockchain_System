@@ -1,0 +1,146 @@
+{
+  "Cen\u00e1rio Pequeno": {
+    "general": {
+      "total_transactions": 278,
+      "successful_transactions": 27,
+      "success_rate": 0.09712230215827339,
+      "total_volume": 529.5921232359599
+    },
+    "failure_reasons": {
+      "price_too_high": 224,
+      "reputation_too_low": 16,
+      "insufficient_capacity": 11
+    },
+    "buyers": {
+      "total_spent": 554.3158801757396,
+      "avg_budget_remaining": 2167.003093705538,
+      "avg_transactions": 27.8
+    },
+    "providers": {
+      "total_earned": 529.5921232359598,
+      "avg_utilization": 0.20742621732964137,
+      "avg_reputation": 0.34498306412113505
+    },
+    "network": {
+      "total_commission": 24.723756939779737,
+      "avg_transactions": 13.5
+    },
+    "simulation_config": {
+      "name": "Cen\u00e1rio Pequeno",
+      "num_buyers": 10,
+      "num_providers": 5,
+      "num_network_agents": 2,
+      "simulation_time": 100,
+      "transaction_rate": 3
+    },
+    "execution_time": 0.001577615737915039
+  },
+  "Cen\u00e1rio M\u00e9dio": {
+    "general": {
+      "total_transactions": 812,
+      "successful_transactions": 83,
+      "success_rate": 0.1022167487684729,
+      "total_volume": 1295.625536843591
+    },
+    "failure_reasons": {
+      "price_too_high": 358,
+      "reputation_too_low": 216,
+      "insufficient_capacity": 155
+    },
+    "buyers": {
+      "total_spent": 1404.1792607789273,
+      "avg_budget_remaining": 1909.6576937243333,
+      "avg_transactions": 32.48
+    },
+    "providers": {
+      "total_earned": 1295.625536843591,
+      "avg_utilization": 0.418674153486367,
+      "avg_reputation": 0.25486445939365415
+    },
+    "network": {
+      "total_commission": 108.55372393533662,
+      "avg_transactions": 20.75
+    },
+    "simulation_config": {
+      "name": "Cen\u00e1rio M\u00e9dio",
+      "num_buyers": 25,
+      "num_providers": 12,
+      "num_network_agents": 4,
+      "simulation_time": 150,
+      "transaction_rate": 5
+    },
+    "execution_time": 0.002795696258544922
+  },
+  "Cen\u00e1rio Grande": {
+    "general": {
+      "total_transactions": 1617,
+      "successful_transactions": 254,
+      "success_rate": 0.15708101422387136,
+      "total_volume": 4443.331474241425
+    },
+    "failure_reasons": {
+      "price_too_high": 608,
+      "reputation_too_low": 215,
+      "insufficient_capacity": 540
+    },
+    "buyers": {
+      "total_spent": 4710.834360103717,
+      "avg_budget_remaining": 1854.3767702173936,
+      "avg_transactions": 32.34
+    },
+    "providers": {
+      "total_earned": 4443.331474241425,
+      "avg_utilization": 0.6934463784086534,
+      "avg_reputation": 0.2687565764378138
+    },
+    "network": {
+      "total_commission": 267.5028858622921,
+      "avg_transactions": 31.75
+    },
+    "simulation_config": {
+      "name": "Cen\u00e1rio Grande",
+      "num_buyers": 50,
+      "num_providers": 20,
+      "num_network_agents": 8,
+      "simulation_time": 200,
+      "transaction_rate": 8
+    },
+    "execution_time": 0.007281303405761719
+  },
+  "Cen\u00e1rio Intensivo": {
+    "general": {
+      "total_transactions": 3577,
+      "successful_transactions": 349,
+      "success_rate": 0.09756779424098407,
+      "total_volume": 5705.866700986221
+    },
+    "failure_reasons": {
+      "price_too_high": 1625,
+      "reputation_too_low": 762,
+      "insufficient_capacity": 841
+    },
+    "buyers": {
+      "total_spent": 6048.124397944138,
+      "avg_budget_remaining": 1744.4367785944064,
+      "avg_transactions": 35.77
+    },
+    "providers": {
+      "total_earned": 5705.866700986221,
+      "avg_utilization": 0.5442850660282996,
+      "avg_reputation": 0.18237303477565098
+    },
+    "network": {
+      "total_commission": 342.2576969579167,
+      "avg_transactions": 23.266666666666666
+    },
+    "simulation_config": {
+      "name": "Cen\u00e1rio Intensivo",
+      "num_buyers": 100,
+      "num_providers": 35,
+      "num_network_agents": 15,
+      "simulation_time": 300,
+      "transaction_rate": 12
+    },
+    "execution_time": 0.010830879211425781
+  }
+}

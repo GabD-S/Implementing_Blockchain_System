@@ -1,0 +1,26 @@
+{
+  "simulation": "Multi-Agent Cloud Storage",
+  "timestamp": "2025-07-25",
+  "agents": {
+    "buyers": {
+      "count": 5,
+      "success_rate": 0.85,
+      "avg_cost": 120.5
+    },
+    "providers": {
+      "count": 3,
+      "success_rate": 0.92,
+      "avg_revenue": 450.25
+    },
+    "network": {
+      "count": 2,
+      "success_rate": 0.88,
+      "avg_transactions": 25
+    }
+  },
+  "summary": {
+    "total_agents": 10,
+    "avg_success_rate": 0.8833333333333333,
+    "economic_efficiency": 3.736514522821577
+  }
+}

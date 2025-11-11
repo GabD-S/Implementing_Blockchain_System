@@ -1,0 +1,9 @@
+/home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Comportamental_Avançada/rust/target/debug/deps/libiana_time_zone-eb430e50a5754545.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/ffi_utils.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/tz_linux.rs
+
+/home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Comportamental_Avançada/rust/target/debug/deps/libiana_time_zone-eb430e50a5754545.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/ffi_utils.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/tz_linux.rs
+
+/home/gabriel_pc/cloud-storage-ns3/ns-allinone-3.35/ns-3.35/ParametrosNao_Aleatorios/Teoria_Comportamental_Avançada/rust/target/debug/deps/iana_time_zone-eb430e50a5754545.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/ffi_utils.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/tz_linux.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/ffi_utils.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-6f17d22bba15001f/iana-time-zone-0.1.64/src/tz_linux.rs:

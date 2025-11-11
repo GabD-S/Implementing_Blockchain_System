@@ -1,0 +1,300 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{Modelagem e Simulação de uma Rede Descentralizada de Armazenamento em Nuvem}
+
+\author{Gabriel de Sousa\inst{1}, Gabriel Felix de Lima\inst{1}, Victor André de Moraes\inst{1}\\
+Thiago Masera Tokarski\inst{1}, Gustavo Lopes Dezan\inst{1}}
+
+\address{CIC -- Universidade de Brasília (UnB)\\
+  DF -- Brazil\\
+  \email{211010332@aluno.unb.br, 211056000@aluno.unb.br, 211026664@aluno.unb.br,}\\
+  \email{190096063@aluno.unb.br, 202033463@aluno.unb.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+This work explores the feasibility of a decentralized cloud storage network through an agent-based simulation model. A simulation was developed in Python using the \texttt{asyncio} library to model interactions among three main actors: Storage Buyers, Providers, and an intermediate Broker. The model incorporates realistic dynamics such as finite storage capacity, time-limited contracts, network latency, and multiple failure sources. The simulation was executed across multiple scalability scenarios and showed that, even with simple rule-based agents, the architecture is functional and economically viable. The quantitative analysis covered economies ranging from 26 to 183 agents, processing up to 4,500 transactions and demonstrating success rates between 9.7\% and 15.7\%, financial volumes from \$894 to \$25,289, and throughput of up to 1.92 TPS. The results validate the conceptual model and establish a solid foundation for the future development of AI-powered agents.
+\end{abstract}
+     
+\begin{resumo}
+Este trabalho explora a viabilidade de uma rede de armazenamento em nuvem descentralizada por meio de um modelo de simulação baseado em agentes. Foi desenvolvida uma simulação em Python, utilizando a biblioteca \texttt{asyncio}, para modelar as interações entre três atores principais: Compradores de armazenamento, Provedores e um Broker intermediário. O modelo incorpora dinâmicas realistas como capacidade finita de armazenamento, contratos com duração limitada, latência de rede e múltiplas fontes de falha. A simulação executada em múltiplos cenários de escalabilidade revelou que, mesmo com agentes baseados em regras simples, a arquitetura é funcional e economicamente viável. A análise quantitativa abrangeu desde economias pequenas com 26 agentes até economias massivas com 183 agentes, processando até 4.500 transações e demonstrando taxas de sucesso entre 9,7\% e 15,7\%, volumes financeiros de \$894 a \$25.289, e throughput de até 1,92 TPS. Os resultados validam o modelo conceitual e estabelecem uma base sólida para o futuro desenvolvimento de agentes dotados de inteligência artificial.
+\end{resumo}
+
+\section{Contextualização do Projeto de Pesquisa}
+
+Para fornecer um panorama completo, esta seção detalha a estrutura formal do projeto de pesquisa que deu origem a este trabalho. A tabela a seguir resume os elementos fundamentais da investigação.
+
+\begin{table}[ht]
+\centering
+\caption{Elementos de Pesquisa}
+\label{tab:pesquisa}
+\begin{tabular}{|p{0.25\linewidth}|p{0.65\linewidth}|}
+\hline
+\textbf{Tema} & Arquitetura de Sistema Multiagentes com Blockchain para Negociação de Contratos de Serviços em Nuvem Distribuída \\
+\hline
+\textbf{Problema} & A predominância de provedores centralizados de serviços em nuvem limita a flexibilidade, aumenta os custos e reduz a transparência na alocação de recursos computacionais. \\
+\hline
+\textbf{Pergunta de Pesquisa} & Como um sistema multiagentes, utilizando blockchain, pode simular a negociação de contratos de serviços de infraestrutura da nuvem distribuída? \\
+\hline
+\textbf{Hipótese} & É possível projetar e simular um sistema multiagentes que negocie contratos de nuvem em blockchain, otimizando a alocação e o gerenciamento de recursos. \\
+\hline
+\textbf{Objetivo} & Definir arquitetura do sistema multiagentes e o modelo para contrato de modo a precificar os recursos computacionais de maneira sensata. \\
+\hline
+\textbf{Método} & Pesquisa Bibliográfica, Modelagem e Desenvolvimento, Simulação Computacional, Avaliação e Validação. \\
+\hline
+\textbf{Classificação} & Natureza: Aplicada; Objetivos: Exploratória; Abordagem: Quantitativa; Técnica: Simulação. \\
+\hline
+\end{tabular}
+\end{table}
+
+A análise dos elementos da pesquisa revela uma abordagem metodológica que combina Sistemas Multiagentes (SMA), Blockchain e Computação em Nuvem Distribuída. O tema define claramente o foco em como agentes autônomos podem negociar e gerenciar serviços de nuvem de forma descentralizada, enquanto o problema aponta a lacuna a ser preenchida pela centralização atual do mercado de nuvem que gera problemas de custo, dependência e falta de transparência.
+
+A pergunta de pesquisa direciona a investigação para a viabilidade de uma simulação que utilize SMA e blockchain para automatizar a negociação de contratos de serviço. A hipótese acredita que um sistema com essas características não apenas é viável, mas também pode trazer benefícios claros como otimização de recursos, maior transparência e mais acesso ao mercado. A justificativa baseia-se nos riscos conhecidos dos sistemas centralizados e nos benefícios teóricos da descentralização via blockchain.
+
+\section{Arquitetura e Estrutura dos Agentes}
+
+A implementação da simulação foi estruturada para ser modular e permitir diferentes abordagens de teste e análise. O código principal foi desenvolvido em Python utilizando a biblioteca \texttt{asyncio} para garantir comunicação assíncrona eficiente entre os agentes, eliminando a necessidade de dependências externas como servidores de mensagem.
+
+\subsection{Estrutura Geral dos Agentes}
+
+O sistema modelado é composto por três tipos principais de agentes, cada um com responsabilidades específicas e comportamentos bem definidos. O agente Comprador atua como solicitante de recursos de armazenamento, gerando periodicamente requisições que são enviadas ao Broker intermediário. Suas funcionalidades incluem o envio de solicitações de armazenamento em intervalos regulares, o recebimento de propostas ou confirmações da rede, a validação do sucesso da alocação e o registro de estatísticas internas sobre sucessos e falhas.
+
+O agente Provedor representa as entidades que oferecem recursos de armazenamento na rede descentralizada. Este agente responde a solicitações encaminhadas pelo Broker, tomando decisões de aceitação ou recusa baseadas na disponibilidade de espaço e em probabilidades de falha controladas que simulam instabilidades reais. O Provedor confirma o cumprimento ou descumprimento dos contratos através de mensagens específicas enviadas de volta ao Broker.
+
+O agente Rede Intermediadora, implementado como Broker, atua como o orquestrador central das interações. Ele recebe todas as solicitações dos compradores, seleciona provedores adequados baseando-se em sistemas de reputação, avalia a confiabilidade dos contratos através de métricas simuladas e mantém logs detalhados de todas as transações para análise posterior.
+
+\subsection{Visão Geral da Arquitetura do Código}
+
+A arquitetura principal utiliza uma classe \texttt{MessageBus} customizada que gerencia filas de mensagens em memória para cada agente, simulando latência de rede através de atrasos aleatórios que tornam a simulação mais realista. Os três tipos de agentes principais (\texttt{BuyerAgent}, \texttt{StorageProviderAgent}, \texttt{IntermediaryNetworkAgent}) possuem comportamentos assíncronos implementados com \texttt{asyncio}, onde cada agente executa em seu próprio loop de tarefas concorrentes.
+
+O sistema implementa funcionalidades avançadas como capacidade de armazenamento real, duração de contratos, sistema de reputação dinâmico e preços que variam conforme as condições de mercado. A classe \texttt{SimulationMetrics} coleta dados detalhados durante a execução, enquanto a função \texttt{run\_monte\_carlo\_simulation} executa múltiplos ciclos para garantir validade estatística dos resultados.
+
+Uma implementação alternativa utilizando o framework SPADE (\textit{Smart Python Agent Development Environment}) também foi desenvolvida, baseada no protocolo de comunicação XMPP. Esta versão define a lógica dos agentes através de comportamentos específicos do SPADE, como \texttt{PeriodicBehaviour} e \texttt{CyclicBehaviour}, mas adiciona complexidade relacionada à configuração e manutenção de servidores XMPP.
+
+\section{Definição do Escopo Inicial}
+
+Para uma primeira aproximação, foi construída uma versão reduzida da rede de armazenamento em nuvem descentralizada que mantém a representação dos componentes essenciais para validar a arquitetura principal. Os agentes mínimos viáveis foram definidos como Provedor de Armazenamento (entidade que oferece seu espaço ocioso na rede), Comprador (entidade que demanda e solicita espaço de armazenamento) e Rede Independente de Trocas (implementada como um agente Broker para intermediar comunicação e negociações).
+
+As interações fundamentais consideradas no modelo incluem as responsabilidades do Provedor de alocar o espaço requisitado e cumprir a disponibilidade durante o contrato, as ações do Comprador de solicitar espaço de armazenamento na rede, e as funções da Rede (Broker) de verificar as solicitações (contratos) e intermediar as conexões entre compradores e provedores.
+
+\section{Descrição do Sistema Completo}
+
+A motivação para sistemas de armazenamento descentralizados surge da necessidade de alternativas robustas ao modelo predominante centralizado que acarreta riscos como pontos únicos de falha e dependência de fornecedor. A computação em nuvem tornou-se onipresente, mas as redes de armazenamento descentralizadas emergem como uma solução para os problemas inerentes à centralização. Este artigo detalha a simulação de uma rede simplificada para avaliar sua arquitetura, ressaltando que este trabalho utiliza agentes com comportamentos predefinidos, estabelecendo a base para a futura integração de agentes com inteligência artificial.
+
+O sistema modelado explicita os agentes, suas interações e os objetivos de confiabilidade e disponibilidade. Uma interação completa se inicia com a solicitação do Comprador, passa pela seleção de um Provedor pelo Broker, e culmina na alocação (ou recusa) do espaço e posterior liberação ao fim do contrato.
+
+\subsection{Modelo de Metas e Dependências do Sistema}
+
+O diagrama na Figura \ref{fig:diagrama_metas} ilustra a arquitetura completa do sistema almejado, modelada a partir das metas de cada ator e das dependências entre eles, representando a visão holística que a simulação busca validar em seus aspectos fundamentais.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{image.png}
+\caption{Diagrama de metas e dependências entre os atores do sistema.}
+\label{fig:diagrama_metas}
+\end{figure}
+
+A análise do diagrama revela três atores principais onde o Comprador busca obter \textit{Armazenamento adquirido} de forma confiável através de \textit{Solicitar espaço} e \textit{Negociar com a rede}, visando um \textit{Contrato confiável}. O Provedor de Armazenamento foca em garantir \textit{Alta disponibilidade} e \textit{Alta confiabilidade} através de tarefas como \textit{Alocar espaço de disco}, \textit{Monitorar a integridade} e \textit{Atuar em caso de falha}, recorrendo a um \textit{Banco de Reserva} para garantir redundância. A Rede Independente de Trocas atua como orquestrador e garantidor da lisura, objetivando \textit{Transparência na rede} e \textit{Neutralidade da intermediação} através de \textit{Smart contracts} para \textit{Verificar contratos}, \textit{Auditar conflitos} e \textit{Sincronizar} informações.
+
+\subsection{Simplificação para Simulação}
+
+Para a simulação, o sistema foi simplificado através da redução no número de agentes e na complexidade de suas interações para focar na dinâmica principal. Mecanismos avançados como processos de auditoria e banco de reserva para contingências foram excluídos nesta fase inicial. Variáveis aleatórias foram inseridas para simular falhas, como a probabilidade de um provedor não conseguir alocar espaço, enquanto a comunicação de rede foi simplificada por um \texttt{MessageBus} em memória, substituindo um protocolo de rede completo.
+
+O roteiro inicial sugeria o uso da plataforma SPADE, com comportamentos como \texttt{CyclicBehaviour} e comunicação via protocolo FIPA. No entanto, para maior simplicidade, controle e para evitar dependências externas, optou-se por uma implementação em Python puro com a biblioteca \texttt{asyncio}. Variáveis de falha foram implementadas como atributos dos agentes.
+
+\section{Metodologia da Simulação}
+
+A simulação foi configurada com parâmetros específicos para garantir representatividade estatística e realismo operacional, abrangendo múltiplos cenários de escalabilidade desde economias pequenas com 26 agentes até economias massivas com 183 agentes. Os cenários testados variaram de 26 agentes totais (15 compradores, 8 provedores, 3 agentes de rede) em economias pequenas até 183 agentes (120 compradores, 45 provedores, 18 agentes de rede) em economias massivas.
+
+\begin{table}[ht]
+\centering
+\caption{Parâmetros de configuração da simulação por cenário}
+\label{tab:parametros}
+\begin{tabular}{|l|c|l|}
+\hline
+\textbf{Parâmetro} & \textbf{Faixa de Valores} & \textbf{Descrição} \\
+\hline
+Tempo de Simulação & 120-300s & Duração total por cenário \\
+Taxa de Transação & 4-15 TPS & Frequência de solicitações \\
+Número Total de Agentes & 26-183 & Agentes ativos por cenário \\
+Latência de Rede & 66-195ms & Atraso simulado na comunicação \\
+\hline
+\end{tabular}
+\end{table}
+
+O protocolo de execução seguiu diretrizes metodológicas rigorosas incluindo a inicialização de agentes com parâmetros aleatórios dentro de limites estabelecidos, ativação simultânea de todos os agentes utilizando \texttt{asyncio}, registro automático de todas as transações e métricas, execução de múltiplos cenários para validação estatística, e análise quantitativa através de cálculo de médias, desvios padrão e intervalos de confiança.
+
+\section{Implementação da Simulação com Múltiplos Cenários}
+
+Para obter resultados estatisticamente relevantes, a simulação foi executada em quatro cenários distintos de escalabilidade, cada um representando diferentes tamanhos de economia digital. O fluxo de cada cenário seguiu etapas bem definidas iniciando com a inicialização dos agentes conforme o tamanho do cenário, seguida por solicitações dos compradores em intervalos determinados pela taxa de transação configurada.
+
+A intermediação ocorreu através do Broker que recebeu os pedidos e conectou solicitantes a provedores disponíveis, selecionados com base em reputação e disponibilidade. A avaliação de sucesso ou falha foi determinada pela disponibilidade do provedor e por sorteios estocásticos baseados em probabilidades de falha realistas. Cada resultado foi registrado pelo Broker incluindo sucessos, falhas, tempos de resposta e volumes financeiros, com o processo sendo repetido continuamente durante o tempo de simulação de cada cenário.
+
+As métricas coletadas incluíram taxa de sucesso (percentual de solicitações atendidas com êxito), tempo de resposta (latência média para processamento de solicitações), throughput (transações processadas por segundo), volume financeiro (valor total movimentado), valor médio por transação, e tempo de execução computacional.
+
+\section{Propagação de Erros}
+
+Para testar a robustez do sistema, foram inseridas falhas controladas que simulam condições reais de operação. A indisponibilidade aleatória de provedores simula falhas de hardware ou conectividade, enquanto o atraso de mensagens reproduz latência de rede variável observada nos resultados de 66ms a 195ms. Contratos corrompidos representam falhas de validação pelo Broker, e situações de sobrecarga simulam cenários onde a demanda excede a oferta disponível.
+
+Os dados coletados mostram que as principais causas de falha foram preços considerados muito altos (representando entre 608 e 1.625 falhas por cenário), reputação baixa dos provedores (16 a 762 falhas), e capacidade insuficiente (11 a 841 falhas). Esta distribuição de falhas reflete condições realistas de mercado onde fatores econômicos, de confiança e de capacidade impactam o sucesso das transações.
+
+\section{Resultados Experimentais}
+
+\subsection{Resultados Quantitativos Primários}
+
+A simulação executada em quatro cenários de escalabilidade processou um total de 8.640 transações, demonstrando a viabilidade operacional do sistema em diferentes escalas. Os resultados consolidados revelam comportamentos consistentes e escalabilidade adequada conforme apresentado na Tabela \ref{tab:resultados_principais}.
+
+\begin{table}[ht]
+\centering
+\caption{Resultados principais da simulação por cenário de escalabilidade}
+\label{tab:resultados_principais}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Cenário} & \textbf{Taxa Sucesso (\%)} & \textbf{Volume (\$)} & \textbf{Throughput (TPS)} & \textbf{Latência (ms)} \\
+\hline
+Economia Pequena & 9,7\% & \$894 & 0,38 & 66,6 \\
+Economia Média & 13,1\% & \$5.007 & 0,91 & 91,7 \\
+Economia Grande & 10,9\% & \$8.627 & 1,09 & 141,9 \\
+Economia Massiva & 12,8\% & \$25.289 & 1,92 & 195,0 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Análise Detalhada por Métrica}
+
+A taxa de sucesso observada entre 9,7\% e 13,1\% indica um sistema funcional operando em condições competitivas realistas. Estes valores refletem a implementação de limitações de capacidade, o impacto das falhas simuladas de provedores, e a concorrência entre compradores por recursos limitados. A variabilidade entre cenários sugere sensibilidade às condições de escala e densidade de agentes, característica esperada em sistemas complexos adaptativos.
+
+O throughput demonstrou escalabilidade positiva, aumentando de 0,38 TPS na economia pequena para 1,92 TPS na economia massiva, indicando que o sistema mantém e melhora sua capacidade de processamento conforme o aumento do número de agentes. Esta progressão sugere que a arquitetura é adequada para crescimento orgânico da rede.
+
+A latência apresentou crescimento esperado com a escala, variando de 66,6ms a 195,0ms, refletindo o aumento na complexidade de coordenação conforme mais agentes participam do sistema. Este comportamento está dentro de parâmetros aceitáveis para aplicações de armazenamento em nuvem onde a latência não é crítica comparada à confiabilidade.
+
+O volume financeiro mostrou crescimento exponencial de \$894 na economia pequena para \$25.289 na economia massiva, demonstrando o potencial econômico significativo de redes descentralizadas de armazenamento. O valor médio por transação também cresceu de \$19,44 para \$43,90, sugerindo que economias maiores suportam transações de maior valor.
+
+\subsection{Análise de Escalabilidade}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{scalability_analysis.png}
+\caption{Análise de escalabilidade: throughput, latência e eficiência vs número de agentes}
+\label{fig:escalabilidade}
+\end{figure}
+
+\subsection{Resultados Econômicos Detalhados}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{cloud_storage_analysis.png}
+\caption{Análise econômica: volume financeiro, eficiência e distribuição de receitas}
+\label{fig:economia}
+\end{figure}
+
+A análise econômica detalhada revela que os provedores obtiveram receitas crescentes conforme a escala, de \$530 a \$25.289, enquanto mantiveram taxas de utilização que variaram de 20,7\% na economia pequena para 54,4\% na economia intensiva. A rede intermediária (Broker) obteve comissões proporcionais variando de \$25 a \$342, demonstrando a viabilidade econômica da intermediação descentralizada.
+
+Os compradores mantiveram orçamentos remanescentes significativos em todos os cenários (entre \$1.744 e \$2.167 em média), indicando que o sistema não opera em saturação completa de demanda. Esta característica sugere espaço para crescimento e otimização de preços que poderiam aumentar a utilização de recursos disponíveis.
+
+\section{Discussão dos Resultados}
+
+Os resultados obtidos fornecem evidências empíricas robustas que suportam a hipótese de pesquisa, demonstrando que um sistema multiagentes é capaz de operar de forma autônoma e processar transações de armazenamento em múltiplas escalas. A viabilidade técnica foi comprovada através do processamento bem-sucedido de 8.640 transações totais, com tempos de execução computacional eficientes variando de 0,86 a 1,97 segundos por cenário.
+
+A eficiência operacional foi evidenciada pela escalabilidade positiva do throughput e pela estabilidade relativa dos tempos de resposta considerando o aumento exponencial no número de agentes. A sustentabilidade econômica foi demonstrada através do crescimento consistente dos volumes financeiros e da manutenção de margens operacionais positivas para todos os tipos de agentes.
+
+\subsection{Limitações e Oportunidades de Melhoria}
+
+A variabilidade nas taxas de sucesso entre cenários indica a necessidade de mecanismos de estabilização e otimização adaptativa. A taxa de sucesso relativamente baixa (9,7\% a 13,1\%) sugere oportunidades para implementação de algoritmos de seleção de provedores mais sofisticados, desenvolvimento de mecanismos de redundância e recuperação, e criação de estratégias adaptativas de rebalanceamento de carga.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{performance_analysis_detailed.png}
+\caption{Distribuição e análise de tipos de falhas por cenário}
+\label{fig:falhas}
+\end{figure}
+
+A análise de falhas revela que os fatores econômicos (preços altos) representam a maior causa de transações não realizadas, seguidos por questões de reputação e capacidade. Este padrão sugere que mecanismos de precificação dinâmica e sistemas de reputação mais sofisticados poderiam melhorar significativamente as taxas de sucesso.
+
+\subsection{Implicações para a Arquitetura}
+
+Os resultados sugerem que a arquitetura proposta é funcionalmente viável para implementação em escala piloto, mas requer refinamentos nos algoritmos de consenso e seleção de provedores. O sistema se beneficiaria significativamente de mecanismos de inteligência artificial para otimização adaptativa, especialmente em algoritmos de precificação dinâmica e seleção de provedores baseada em múltiplos critérios.
+
+A escalabilidade demonstrada indica que a arquitetura pode suportar crescimento orgânico da rede, mas sugere a necessidade de otimizações para manter a eficiência conforme o aumento da escala. A implementação de mecanismos de cache, otimização de rotas de comunicação, e algoritmos de balanceamento de carga mais sofisticados seriam benéficos para escalas maiores.
+
+\section{Análise de Sensibilidade}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{multi_agent_cloud_storage_complete_analysis.png}
+\caption{Análise de sensibilidade: impacto da variação de parâmetros na performance do sistema}
+\label{fig:sensibilidade}
+\end{figure}
+
+A análise de sensibilidade dos parâmetros revelou que a taxa de transação e o número de agentes têm impacto direto e previsível no throughput e volume financeiro do sistema. O aumento da taxa de transação de 4 para 15 TPS resultou em crescimento proporcional do volume de negócios, demonstrando que o sistema pode responder adequadamente a variações na demanda.
+
+A variação no número de provedores mostrou impacto significativo na taxa de sucesso, sugerindo que a densidade de provedores é um fator crítico para a eficiência do sistema. Cenários com maior proporção de provedores por comprador tendem a apresentar melhores taxas de sucesso e menor latência média.
+
+A análise de diferentes durações de simulação indicou convergência estatística adequada para períodos superiores a 120 segundos, validando a metodologia utilizada e sugerindo que simulações mais longas poderiam revelar padrões de comportamento emergente adicionais.
+
+\section{Trabalhos Futuros}
+
+Com base nos resultados obtidos, melhorias técnicas imediatas incluem a execução de simulações com amostras maiores para maior confiabilidade estatística, desenvolvimento de algoritmos de seleção de provedores mais sofisticados baseados em múltiplos critérios, implementação de estratégias de retry e redundância para melhorar taxas de sucesso, e desenvolvimento de interfaces gráficas para monitoramento em tempo real.
+
+A próxima fase do projeto contempla a evolução para sistemas inteligentes através da substituição dos agentes baseados em regras por agentes com aprendizado por reforço, implementação de algoritmos genéticos para otimização de parâmetros, uso de redes neurais para antecipação de padrões de demanda, e desenvolvimento de protocolos de negociação baseados em teoria de jogos.
+
+O objetivo de longo prazo inclui a integração com blockchain através da implementação de smart contracts para automatização de acordos, desenvolvimento de métricas de confiança descentralizadas, criação de economia baseada em tokens para incentivos, e implementação de mecanismos de governança descentralizada.
+
+Para viabilizar a implementação em produção, será necessária a migração para arquitetura de microsserviços distribuída, execução de testes de carga com milhares de agentes, implementação de protocolos criptográficos robustos, e desenvolvimento de APIs padrão para interoperabilidade.
+
+\section{Conclusão}
+
+Este trabalho apresentou uma simulação bem-sucedida de uma rede descentralizada de armazenamento em nuvem baseada em sistemas multiagentes. Os resultados experimentais validaram a viabilidade técnica e econômica da arquitetura proposta, demonstrando que mesmo agentes com comportamentos relativamente simples podem operar de forma autônoma e eficiente em múltiplas escalas.
+
+As contribuições principais incluem a definição de uma arquitetura clara para sistemas descentralizados de armazenamento, o desenvolvimento de uma simulação funcional em Python com \texttt{asyncio}, a demonstração empírica da viabilidade através de múltiplos cenários de escalabilidade, o estabelecimento de métricas relevantes para avaliação de sistemas descentralizados, e a criação de uma fundação sólida para futuras implementações com inteligência artificial.
+
+As taxas de sucesso observadas entre 9,7\% e 13,1\%, embora possam parecer baixas, são contextualmente significativas considerando a implementação realista de limitações e falhas, a ausência de mecanismos de otimização avançados, a competição por recursos limitados, e o comportamento emergente de sistemas complexos. O throughput escalável de até 1,92 TPS e os volumes financeiros crescentes de \$894 a \$25.289 confirmam a viabilidade econômica do modelo.
+
+Este trabalho contribui para o avanço do conhecimento em sistemas multiagentes através da demonstração prática de coordenação descentralizada, exploração de alternativas aos modelos centralizados de computação em nuvem, validação de mercados descentralizados de recursos computacionais, e estabelecimento de protocolos de simulação para sistemas complexos.
+
+A pesquisa demonstra que a descentralização de serviços de nuvem não apenas é tecnicamente viável, mas também economicamente sustentável. Os resultados estabelecem uma base empírica sólida para o desenvolvimento de sistemas mais sofisticados, incorporando inteligência artificial e tecnologias blockchain. O trabalho valida parcialmente a hipótese de pesquisa, confirmando que sistemas multiagentes podem efetivamente simular e operar mercados descentralizados de recursos computacionais.
+
+As limitações identificadas apontam direções claras para pesquisas futuras, particularmente na integração de mecanismos adaptativos e inteligentes. Esta simulação representa um primeiro passo importante na jornada rumo a ecossistemas de computação em nuvem verdadeiramente descentralizados, transparentes e eficientes, oferecendo uma alternativa robusta aos modelos centralizados predominantes.
+
+\section{Referências}
+
+\begin{enumerate}
+\item AMAZON WEB SERVICES. \textit{What is Cloud Storage?} Disponível em: \textit{https://aws.amazon.com/what-is/cloud-storage/}. Acesso em: 26 jul. 2025.
+
+\item CAMEL-AI TEAM. \textit{CAMEL: Communicative Agents for "Mind" Exploration of Large Scale Language Model Society}. Disponível em: \textit{https://github.com/camel-ai/camel}. Acesso em: 26 jul. 2025.
+
+\item GERVAIS, Arthur et al. \textit{Bitcoin-Simulator}. Disponível em: \textit{https://github.com/arthurgervais/Bitcoin-Simulator}. Acesso em: 26 jul. 2025.
+
+\item RUSSELL, Stuart J.; NORVIG, Peter. \textit{Artificial Intelligence: A Modern Approach}. 4. ed. Prentice Hall, 2020.
+
+\item WOOLDRIDGE, Michael. \textit{An Introduction to MultiAgent Systems}. 2. ed. John Wiley \& Sons, 2009. ISBN: 978-0-470-51946-2.
+\end{enumerate}
+
+\end{document}
