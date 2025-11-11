@@ -60,7 +60,7 @@ O primeiro gráfico plota todos os provedores disponíveis em um gráfico de Pre
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{graficos_analise_comportamental/provider_landscape.png}
+    \includegraphics[width=0.9\textwidth]{Teoria_deModulacao/Teoria_comportamental/provedor1_wins.png}
     \caption{Cenário de Mercado: Preço vs. Reputação dos Provedores.}
     \label{fig:landscape}
 \end{figure}
@@ -73,7 +73,7 @@ Estes gráficos mostram a "função de valor" (\texttt{value\_fn} - o resultado 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{graficos_analise_comportamental/buyer_perception.png}
+    \includegraphics[width=\textwidth]{Teoria_deModulacao/Teoria_comportamental/buyerperception.png}
     \caption{Análise da Percepção de Valor do Comprador.}
     \label{fig:perception}
 \end{figure}
@@ -91,7 +91,7 @@ A causa para este mercado "perfeito" está na inicialização dos parâmetros vi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{graficos_analise_comportamental/parameter_distributions.png}
+    \includegraphics[width=\textwidth]{Teoria_deModulacao/Teoria_comportamental/parameter_distribuition.png}
     \caption{Análise da Distribuição dos Parâmetros (Todos Uniformes).}
     \label{fig:distributions}
 \end{figure}
@@ -117,6 +117,67 @@ A causa para este mercado "perfeito" está na inicialização dos parâmetros vi
     \end{itemize}
     Dessa forma, o \texttt{ref\_point} de um comprador estará "próximo" do preço de mercado, forçando a Teoria da Perspectiva a avaliar "ganhos" e "perdas" pequenos.
 \end{enumerate}
+
+    \section{Iteração 2: Ajustes para a Teoria Comportamental Avançada}
+
+    Após a análise inicial (Seção 1), identificamos que a geração de parâmetros uniformes e a ausência de restrições relevantes induziam um mercado "racional" com um provedor dominante. Implementamos as seguintes mudanças no gerador de dados (código Rust em \texttt{src/bin/comportamental\_simulacao.rs}) para induzir comportamentos consistentes com a Teoria da Perspectiva.
+
+    \subsection{Mudanças Principais no Modelo}
+    \begin{itemize}
+        \item \textbf{Orçamento ancorado ao preço de mercado:} Para cada comprador, o ponto de referência passou a ser calculado como
+        \[ \text{ref\_point} = \text{storage} \times p_{\text{mercado}} \times (1 + \epsilon), \quad \epsilon \sim \mathcal{N}(0, 0{,}15), \]
+        com $p_{\text{mercado}} = 0{,}15$ R$/GB$ e \(\epsilon\) truncado em $\pm 40\%$. Isso aproxima orçamentos do nível de preços praticado, permitindo ganhos e perdas marginalmente percebidos.
+
+        \item \textbf{Distribuições estocásticas realistas:}
+        \begin{itemize}
+            \item \textbf{Storage (GB):} Log-normal (mediana \~50 GB), limitando em $[10, 400]$ GB.
+            \item \textbf{Capacity (GB):} Log-normal (mediana \~1200 GB), limitando em $[400, 8000]$ GB.
+            \item \textbf{Price (R$/GB$):} Normal com média $0{,}15$ e $\sigma=0{,}03$, truncado em $[0{,}10, 0{,}22]$.
+            \item \textbf{Reputation:} Beta$(5, 2)$ mapeada para o intervalo $[0{,}4, 0{,}9]$.
+            \item \textbf{Fairness Threshold:} Normal ao redor de $0{,}15$ (truncado em $[0{,}10, 0{,}20]$).
+        \end{itemize}
+
+        \item \textbf{Restrição de capacidade e alocação:} A capacidade do provedor passou a ser consumida a cada match aceita (\textit{capacity remaining}). Compradores que excedam a capacidade remanescente de um provedor não podem ser atendidos por ele.
+
+        \item \textbf{Critério de aceitação mais restritivo:} A decisão de aceitar requer agora \(v(x) > 0\) (ganho percebido) e pontuação de \textit{fairness} $> 0{,}25$, o que reduz aceitação universal e aumenta a sensibilidade a preços e reputação.
+    \end{itemize}
+
+    \subsection{Impacto Esperado}
+    As mudanças reduzem a probabilidade de um provedor único dominar consistentemente, elevam a competição e criam casos de perdas percebidas (\(v(x) < 0\)) quando preços superam o ponto de referência. Espera-se observar:
+    \begin{itemize}
+        \item Taxas de aceitação $< 100\%$;
+        \item Distribuição de escolhas entre múltiplos provedores;
+        \item Curvas de valor \(\text{value\_fn}\) menos saturadas no regime positivo.
+    \end{itemize}
+
+    \subsection{Novos Gráficos (v2)}
+    Foram adicionados gráficos com o mesmo visual do arquivo original (\texttt{Graficos.py}) e salvos em \textbf{\texttt{graficos\_analise\_comportamental\_v2}}:
+    \begin{itemize}
+        \item \textbf{provider\_landscape\_v2.png}: Preço vs. Reputação dos provedores (cenário não-uniforme).
+        \item \textbf{buyer\_perception\_v2.png}: Regressões \(\text{value\_fn}\) vs. \texttt{ref\_point} e vs. \texttt{storage}.
+        \item \textbf{parameter\_distributions\_v2.png}: Histograma das novas distribuições (\texttt{ref\_point}, \texttt{storage}, \texttt{price}, \texttt{reputation}).
+        \item \textbf{accepted\_per\_provider\_v2.png}: \# de matches aceitas por provedor; arquivo \texttt{summary.txt} contém a taxa de aceitação agregada.
+    \end{itemize}
+
+    \noindent Os scripts Python correspondentes foram mantidos com o estilo do Seaborn e exportam as figuras automaticamente a partir de \texttt{comportamental\_resultados.json}.
+
+    \subsection{Panorama dos efeitos observados na Iteração 2}
+    Após aplicar as alterações da Iteração 2, o comportamento agregado passou a refletir um mercado menos trivial. Em execução representativa, a taxa de aceitação agregada caiu para aproximadamente \textbf{36\%}, com rejeições mais frequentes especialmente entre compradores que demandam grandes volumes de armazenamento. Abaixo sintetizamos os mecanismos que explicam os padrões vistos nos dados e nos gráficos v2:
+
+    \paragraph{Tendência negativa (quase linear) do valor percebido com o aumento do armazenamento.}
+    Ao ancorar o orçamento do comprador no preço de mercado, temos \(\text{ref\_point} \approx \text{storage} \times p_{\text{mercado}} \times (1+\epsilon)\), enquanto o custo total é \(\text{storage} \times \text{price}\). Quando o piso de preço é relativamente alto (p.ex., \(\text{price} \geq 0{,}16\) R\$/GB) e o orçamento tem leve viés negativo (\(\epsilon<0\) em média), a diferença por GB tende a ficar negativa. Como essa diferença é multiplicada por \(\text{storage}\), o \textit{resultado relativo} decresce aproximadamente de forma linear com o aumento de armazenamento. Pela Teoria da Perspectiva, para perdas (\(x<0\)) a função de valor é \(v(x)=-\lambda(-x)^{\beta}\) (com \(\beta=0{,}88\)), o que preserva a tendência monotônica: quanto maior o gap negativo total, mais negativo o \(v(x)\). Assim, compradores que solicitam muito armazenamento tendem a perceber perdas e rejeitar mais.
+
+    \paragraph{Parâmetros concentrados nas faixas baixas: por que ocorrem "acúmulos no início".}
+    A adoção de \textbf{log-normal} para \textit{storage} e \textit{capacity} cria assimetria com cauda longa: muitos agentes pequenos e poucos grandes. Isso se manifesta como concentração de observações nas faixas iniciais (próximas do mínimo), exatamente o comportamento esperado em mercados reais com alta heterogeneidade e poucos outliers. Esse desenho reduz a probabilidade de todos os compradores terem orçamentos muito folgados simultaneamente.
+
+    \paragraph{Reputação mais alta e menos distribuída.}
+    O uso de \(\text{Beta}(5,2)\) mapeada para \([0{,}4,0{,}9]\) é propositalmente \textit{otimista}: a massa de probabilidade se desloca para valores altos, concentrando reputações na ponta superior. Isso reflete um cenário em que a maioria dos provedores tem desempenho adequado (não há grande dispersão de qualidade), restando ao preço e à \textit{fairness} diferenciarem ofertas. Embora tal concentração reduza a heterogeneidade de reputação, ela também amplifica o papel do preço relativo ao limiar de fairness na decisão final.
+
+    \paragraph{Preço por GB e sua interação com reputação e fairness.}
+    A distribuição de preço por GB passou a ser normal truncada com piso (e média) acima do preço de mercado, gerando muitos valores próximos ao limite inferior (efeito de truncamento) e alguns mais caros. Como a reputação é elevada, o fator decisivo migra para a \textit{fairness}: a penalidade cresce quando \(\text{price} > \text{fairness\_threshold}\), reduzindo a pontuação \(\text{fairness\_score}=(1-\text{penalty})\times \text{reputation}\). Com piso de preço acima ou próximo do limiar, mesmo provedores bem avaliados podem falhar no corte (p.ex., \(\text{fairness\_score} > 0{,}40\)). Em contrapartida, provedores com preço perto do piso tendem a concentrar as aceitações. Essa dinâmica explica por que, apesar de reputações altas e relativamente próximas, observamos rejeições substanciais e seleção em torno de ofertas mais \textit{baratas e justas}.
+
+    \paragraph{Síntese.}
+    A combinação de (i) orçamentos ancorados ao mercado com leve viés negativo, (ii) preços com piso acima do mercado, (iii) reputações altas porém pouco discriminantes e (iv) um critério de fairness mais exigente, produz exatamente o padrão observado: quedas de \(v(x)\) com o aumento do armazenamento, rejeições frequentes quando o gap por GB é desfavorável, e aceitações concentradas nas ofertas com melhor razão preço/limiar de fairness. O resultado final é uma taxa de aceitação significativamente menor do que 100\%, com decisões pautadas por pequenas variações ao redor de um patamar de mercado, onde a Teoria da Perspectiva efetivamente se manifesta.
 
 % --- FIM DO DOCUMENTO ---
 \end{document}
