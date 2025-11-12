@@ -31,18 +31,35 @@ Este documento divide o projeto em duas trilhas paralelas:
 
 **Meta:** Criar as "regras do jogo" em uma blockchain (Wasm).
 
+Decisão de design aplicada (minimalista): Somente dados essenciais vão on-chain, conforme justificativa de tamanho de bloco. Negotiations e QoS ficam off-chain; on-chain ficam: (1) CID do arquivo/contrato, (2) endereços das partes, (3) estado final, (4) sinal verde de "pagamento" via dupla validação (sem valor monetário real).
+
 - [ ] **Ação 2.1:** Configurar o Ambiente `ink!`.
     - [ ] Instalar `cargo-contract`.
     - [ ] Instalar um nó de desenvolvimento (ex: `substrate-contracts-node`).
+    
+    Estado atual: Crate do contrato criada em `contracts/storage_market`. Instalação de toolchain (rustup/cargo-contract) pendente no ambiente local (bloqueado por ausência de `rustup`).
 
-- [ ] **Ação 2.2:** Modelar os Contratos (`storage_market`).
-    - [ ] Definir `structs`: `ProviderProfile`, `StorageDeal` (com `file_cid: String`).
-    - [ ] Definir `Mappings` de armazenamento para `providers` e `deals`.
+- [x] **Ação 2.2:** Modelar os Contratos (`storage_market`).
+    - [x] Definir `structs`: `ProviderProfile`, `StorageDeal` (com `file_cid: String`).
+    - [x] Definir `Mappings` de armazenamento para `providers` e `deals`.
+    
+    Implementado em: `contracts/storage_market/src/lib.rs`.
 
-- [ ] **Ação 2.3:** Implementar as Funções (Mensagens) do Contrato.
-    - [ ] `fn register_provider(...)`
-    - [ ] `fn request_storage(..., file_cid: String, ...)` (tipo `payable`)
-    - [ ] `fn complete_storage(...)` (para liberar o *escrow*).
+- [x] **Ação 2.3:** Implementar as Funções (Mensagens) do Contrato.
+        - [x] `fn register_provider(...)`
+        - [x] `fn request_storage(..., file_cid: String, ...)`
+        - [x] `fn accept_provider(deal_id)` e `fn accept_buyer(deal_id)` — dupla validação substitui pagamento.
+        - [x] `fn complete_storage(deal_id)` — libera o "sinal verde" final (estado Completed).
+    
+        Eventos: `ProviderRegistered`, `DealRequested`, `DealAgreed`, `DealCompleted`.
+    
+        Observação: Pagamento foi substituído por dupla validação (comprador + provedor). Ao ambos aceitarem, o estado muda para `Agreed` (pagamento virtual autorizado).
+
+Testes de funcionamento:
+- [x] Implementados testes off-chain (`ink::test`) para o fluxo completo, cobrindo:
+    - Registro do provedor, criação do deal, aceitações das partes, conclusão.
+    - Restrições de autorização (somente as partes podem aceitar/concluir).
+- [ ] Execução local dos testes (bloqueado): depende de toolchain atualizado. Recomendado instalar `rustup` e toolchain compatível para rodar `cargo test` no diretório `contracts/storage_market`.
 
 ### Fase 3: 🤖 O Nó Provedor (O Agente de Serviço Rust)
 
