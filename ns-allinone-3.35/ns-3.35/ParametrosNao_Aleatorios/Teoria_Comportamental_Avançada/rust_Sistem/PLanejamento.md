@@ -15,9 +15,9 @@ Este documento divide o projeto em duas trilhas paralelas:
 
 **Meta:** Provar que o Rust pode interagir com a camada de armazenamento IPFS.
 
-- [ ] **Ação 1.1:** Configurar o IPFS (Kubo).
-    - [ ] Instalar o `kubo`.
-    - [ ] Executar `ipfs init`.
+- [x] **Ação 1.1:** Configurar o IPFS (Kubo).
+    - [x] Instalar o `kubo`.
+    - [x] Executar `ipfs init`.
     - [ ] Executar `ipfs daemon`.
 
 - [ ] **Ação 1.2:** Criar o Projeto Rust (`rust_ipfs_client`).
