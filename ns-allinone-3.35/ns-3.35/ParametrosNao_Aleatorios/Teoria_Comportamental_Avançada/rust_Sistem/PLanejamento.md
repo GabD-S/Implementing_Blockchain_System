@@ -18,14 +18,14 @@ Este documento divide o projeto em duas trilhas paralelas:
 - [x] **Ação 1.1:** Configurar o IPFS (Kubo).
     - [x] Instalar o `kubo`.
     - [x] Executar `ipfs init`.
-    - [ ] Executar `ipfs daemon`.
+    - [x] Executar `ipfs daemon`.
 
-- [ ] **Ação 1.2:** Criar o Projeto Rust (`rust_ipfs_client`).
-    - [ ] Adicionar a crate `ipfs-api` ao `Cargo.toml`.
+- [x] **Ação 1.2:** Criar o Projeto Rust (`rust_ipfs_client`).
+    - [x] Adicionar a crate `ipfs-api` ao `Cargo.toml`.
 
-- [ ] **Ação 1.3:** Script `add_file.rs` (adiciona um arquivo e imprime o CID).
+- [x] **Ação 1.3:** Script `add_file.rs` (adiciona um arquivo e imprime o CID).
 
-- [ ] **Ação 1.4:** Script `get_file.rs` (lê um CID e baixa o arquivo).
+- [x] **Ação 1.4:** Script `get_file.rs` (lê um CID e baixa o arquivo).
 
 ### Fase 2: ⛓️ O Smart Contract (A Lógica de Negócios em Rust/ink!)
 
