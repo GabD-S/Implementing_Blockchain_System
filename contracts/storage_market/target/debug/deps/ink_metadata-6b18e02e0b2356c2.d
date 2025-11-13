@@ -1,0 +1,9 @@
+/home/gabriel_pc/cloud-storage-ns3/contracts/storage_market/target/debug/deps/ink_metadata-6b18e02e0b2356c2.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/validate.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/specs.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/utils.rs
+
+/home/gabriel_pc/cloud-storage-ns3/contracts/storage_market/target/debug/deps/libink_metadata-6b18e02e0b2356c2.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/validate.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/specs.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/utils.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/layout/validate.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/specs.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_metadata-5.1.1/src/utils.rs:
