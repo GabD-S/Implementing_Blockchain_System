@@ -853,6 +853,974 @@
       724,
       805,
       474
+    ],
+    "contract_events": [
+      [
+        "ProviderRegistered",
+        {
+          "provider": 0
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 1
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 2
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 3
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 4
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 5
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 6
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 7
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 8
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 9
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 10
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 11
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 12
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 13
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 14
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 15
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 16
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 17
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 18
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 19
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 20
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 21
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 22
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 23
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 24
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 25
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 26
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 27
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 28
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 29
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 30
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 31
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 32
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 33
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 34
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 0,
+          "buyer": 1,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 1,
+          "buyer": 5,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 2,
+          "buyer": 7,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 2
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 2
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 3,
+          "buyer": 11,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 3
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 3
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 4,
+          "buyer": 13,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 4
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 4
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 5,
+          "buyer": 15,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 5
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 5
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 6,
+          "buyer": 18,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 6
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 6
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 7,
+          "buyer": 20,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 7
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 7
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 8,
+          "buyer": 21,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 8
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 8
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 9,
+          "buyer": 23,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 9
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 9
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 10,
+          "buyer": 25,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 10
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 10
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 11,
+          "buyer": 29,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 11
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 11
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 12,
+          "buyer": 30,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 12
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 12
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 13,
+          "buyer": 37,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 13
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 13
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 14,
+          "buyer": 39,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 14
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 14
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 15,
+          "buyer": 41,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 15
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 15
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 16,
+          "buyer": 48,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 16
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 16
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 17,
+          "buyer": 49,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 17
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 17
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 18,
+          "buyer": 52,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 18
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 18
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 19,
+          "buyer": 55,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 19
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 19
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 20,
+          "buyer": 56,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 20
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 20
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 21,
+          "buyer": 60,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 21
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 21
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 22,
+          "buyer": 63,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 22
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 22
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 23,
+          "buyer": 72,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 23
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 23
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 24,
+          "buyer": 74,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 24
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 24
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 25,
+          "buyer": 76,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 25
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 25
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 26,
+          "buyer": 77,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 26
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 26
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 27,
+          "buyer": 78,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 27
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 27
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 28,
+          "buyer": 80,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 28
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 28
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 29,
+          "buyer": 82,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 29
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 29
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 30,
+          "buyer": 84,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 30
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 30
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 31,
+          "buyer": 86,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 31
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 31
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 32,
+          "buyer": 88,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 32
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 32
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 33,
+          "buyer": 90,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 33
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 33
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 34,
+          "buyer": 91,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 34
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 34
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 35,
+          "buyer": 97,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 35
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 35
+        }
+      ]
     ]
   },
   "time": {
@@ -4981,5 +5949,12 @@
     1.0,
     1.0,
     1.0
-  ]
+  ],
+  "ns3": {
+    "nodes": 135,
+    "dataRate": "10Mbps",
+    "delay": "100ms",
+    "lossRate": 0.0,
+    "source": "fallback"
+  }
 }

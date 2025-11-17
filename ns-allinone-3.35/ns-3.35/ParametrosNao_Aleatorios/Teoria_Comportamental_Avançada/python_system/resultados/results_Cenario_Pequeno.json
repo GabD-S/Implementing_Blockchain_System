@@ -103,6 +103,101 @@
       4789,
       1009,
       3055
+    ],
+    "contract_events": [
+      [
+        "ProviderRegistered",
+        {
+          "provider": 0
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 1
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 2
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 3
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 4
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 0,
+          "buyer": 1,
+          "provider": 3,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 1,
+          "buyer": 5,
+          "provider": 3,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 2,
+          "buyer": 7,
+          "provider": 3,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 2
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 2
+        }
+      ]
     ]
   },
   "time": {
@@ -645,5 +740,12 @@
     1.0,
     1.0,
     1.0
-  ]
+  ],
+  "ns3": {
+    "nodes": 15,
+    "dataRate": "10Mbps",
+    "delay": "100ms",
+    "lossRate": 0.0,
+    "source": "fallback"
+  }
 }

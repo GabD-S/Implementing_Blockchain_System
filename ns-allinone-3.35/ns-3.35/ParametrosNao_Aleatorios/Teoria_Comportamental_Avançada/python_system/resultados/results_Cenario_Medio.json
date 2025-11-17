@@ -230,6 +230,290 @@
       3149,
       478,
       1994
+    ],
+    "contract_events": [
+      [
+        "ProviderRegistered",
+        {
+          "provider": 0
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 1
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 2
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 3
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 4
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 5
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 6
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 7
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 8
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 9
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 10
+        }
+      ],
+      [
+        "ProviderRegistered",
+        {
+          "provider": 11
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 0,
+          "buyer": 1,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 0
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 1,
+          "buyer": 5,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 1
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 2,
+          "buyer": 7,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 2
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 2
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 3,
+          "buyer": 11,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 3
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 3
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 4,
+          "buyer": 13,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 4
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 4
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 5,
+          "buyer": 15,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 5
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 5
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 6,
+          "buyer": 18,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 6
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 6
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 7,
+          "buyer": 20,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 7
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 7
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 8,
+          "buyer": 21,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 8
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 8
+        }
+      ],
+      [
+        "DealRequested",
+        {
+          "dealId": 9,
+          "buyer": 23,
+          "provider": 1,
+          "fileCid": "QmCID"
+        }
+      ],
+      [
+        "DealAgreed",
+        {
+          "dealId": 9
+        }
+      ],
+      [
+        "DealCompleted",
+        {
+          "dealId": 9
+        }
+      ]
     ]
   },
   "time": {
@@ -1343,5 +1627,12 @@
     1.0,
     1.0,
     1.0
-  ]
+  ],
+  "ns3": {
+    "nodes": 37,
+    "dataRate": "10Mbps",
+    "delay": "100ms",
+    "lossRate": 0.0,
+    "source": "fallback"
+  }
 }
