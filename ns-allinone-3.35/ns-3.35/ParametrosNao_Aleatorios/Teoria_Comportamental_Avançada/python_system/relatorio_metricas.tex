@@ -1,0 +1,146 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+\title{Relatório de Métricas}
+\author{Gabriel PC}
+\date{Novembro 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+Este relatório apresenta uma análise detalhada das métricas obtidas a partir das simulações realizadas no sistema de blockchain para armazenamento em nuvem. Os gráficos gerados são explicados em termos de sua importância, o que medem e os resultados observados.
+
+\section{Gráficos e Análises}
+
+% Cada subseção traz o nome do arquivo PNG, explicação do que se esperava medir (segundo Metricas.md), e análise dos resultados reais obtidos nas simulações.
+
+\subsection{Disponibilidade ao Longo do Tempo -- availability\_vs\_time\_extended.png}
+\textbf{O que se esperava medir:} Segundo o Metricas.md, este gráfico mostra a capacidade do sistema de se manter operacional ao longo de um período estendido, evidenciando a robustez e confiabilidade da rede.
+
+\textbf{Resultados:} Os dados dos cenários simulados mostram que a disponibilidade permaneceu próxima de 100\% durante quase todo o tempo, com raros momentos de indisponibilidade. Isso indica alta confiabilidade do sistema mesmo sob diferentes cargas e configurações.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/availability_vs_time_extended.png}
+    \caption{Disponibilidade do sistema ao longo do tempo.}
+\end{figure}
+
+\subsection{Largura de Banda vs Throughput -- bandwidth\_vs\_throughput.png}
+\textbf{O que se esperava medir:} Este gráfico compara a largura de banda máxima disponível com o throughput real do sistema, permitindo avaliar a eficiência do uso dos recursos de rede.
+
+\textbf{Resultados:} Observou-se que o throughput cresce com o aumento da largura de banda, mas há um ponto de saturação onde o ganho se estabiliza, indicando que outros fatores (como processamento ou concorrência) passam a limitar o desempenho.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/bandwidth_vs_throughput.png}
+    \caption{Comparação entre largura de banda e throughput.}
+\end{figure}
+
+\subsection{CPU vs Carga -- cpu\_vs\_load.png}
+\textbf{O que se esperava medir:} A relação entre o uso da CPU e a carga do sistema mostra como o processamento é distribuído entre os nós e se há risco de sobrecarga.
+
+\textbf{Resultados:} Os resultados mostram que o uso da CPU por nó permanece baixo e estável mesmo com aumento da carga, indicando boa escalabilidade e eficiência do sistema.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/cpu_vs_load.png}
+    \caption{Uso de CPU por nó em diferentes cargas.}
+\end{figure}
+
+\subsection{Forks vs Propagação -- forks\_vs\_propagation.png}
+\textbf{O que se esperava medir:} Este gráfico avalia como o aumento do tempo de propagação de transações pode impactar a taxa de forks (divergências) na rede blockchain.
+
+\textbf{Resultados:} A taxa de forks permaneceu baixa em todos os cenários, mesmo com variações no tempo de propagação, indicando que o sistema é resiliente a atrasos de rede.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/forks_vs_propagation.png}
+    \caption{Relação entre forks e tempo de propagação.}
+\end{figure}
+
+\subsection{Mapa de Calor: Blocksize vs Intervalo -- heatmap\_blocksize\_interval.png}
+\textbf{O que se esperava medir:} O mapa de calor mostra como métricas como TPS e latência variam conforme o tamanho do bloco e o intervalo de envio, permitindo identificar configurações ótimas.
+
+\textbf{Resultados:} Os dados indicam que blocos maiores e intervalos menores tendem a aumentar o TPS, mas podem elevar a latência. O gráfico ajuda a visualizar o trade-off entre desempenho e tempo de resposta.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/heatmap_blocksize_interval.png}
+    \caption{Mapa de calor para TPS e latência conforme blocksize e intervalo.}
+\end{figure}
+
+\subsection{Latência vs Taxa de Transação (Principal) -- latency\_vs\_txrate\_main.png}
+\textbf{O que se esperava medir:} Este gráfico mostra como a latência de confirmação de transações varia conforme a taxa de transações enviada ao sistema.
+
+\textbf{Resultados:} Observou-se que a latência aumenta gradualmente com o crescimento da taxa de transações, mas o sistema mantém latências aceitáveis até taxas elevadas, evidenciando boa performance sob carga.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/latency_vs_txrate_main.png}
+    \caption{Latência média em função da taxa de transação.}
+\end{figure}
+
+\subsection{Latência vs Taxa de Transação (Sweep) -- latency\_vs\_txrate\_sweep.png}
+\textbf{O que se esperava medir:} Similar ao anterior, mas com varredura de parâmetros para diferentes configurações, buscando identificar limites de saturação e gargalos.
+
+\textbf{Resultados:} O sweep confirmou o padrão de aumento de latência com taxas mais altas, mas também mostrou que o sistema é capaz de operar de forma estável em uma ampla faixa de configurações.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/latency_vs_txrate_sweep.png}
+    \caption{Latência média em diferentes taxas e configurações.}
+\end{figure}
+
+\subsection{Escalabilidade vs Usuários (Aprimorado) -- scalability\_users\_enhanced.png}
+\textbf{O que se esperava medir:} O gráfico aprimorado mostra como o sistema escala em TPS e taxa de aceitação conforme o número de usuários cresce, evidenciando limites e tendências.
+
+\textbf{Resultados:} Os resultados mostram que o TPS cresce com o número de usuários até um ponto de saturação, enquanto a taxa de aceitação tende a cair em cenários de alta competição, como esperado.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/scalability_users_enhanced.png}
+    \caption{Escalabilidade do sistema em função do número de usuários.}
+\end{figure}
+
+\subsection{Escalabilidade vs Usuários (Principal) -- scalability\_users\_main.png}
+\textbf{O que se esperava medir:} O gráfico principal de escalabilidade ilustra o comportamento do sistema em cenários típicos de crescimento de usuários.
+
+\textbf{Resultados:} O padrão observado é semelhante ao gráfico aprimorado, com crescimento de TPS e queda de aceitação em cenários de alta demanda.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/scalability_users_main.png}
+    \caption{Escalabilidade principal do sistema.}
+\end{figure}
+
+\subsection{Série Temporal de Throughput -- throughput\_timeseries.png}
+\textbf{O que se esperava medir:} Este gráfico mostra como o throughput varia ao longo do tempo, permitindo identificar picos, quedas e estabilidade do processamento.
+
+\textbf{Resultados:} Os dados mostram que o throughput se mantém estável na maior parte do tempo, com pequenas variações que refletem a dinâmica dos cenários simulados.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/throughput_timeseries.png}
+    \caption{Série temporal do throughput do sistema.}
+\end{figure}
+
+\subsection{TPS vs Número de Nós -- tps\_vs\_nodes.png}
+\textbf{O que se esperava medir:} Este gráfico compara o TPS com o número de nós, mostrando como o desempenho do sistema evolui conforme a infraestrutura cresce.
+
+\textbf{Resultados:} Observou-se crescimento linear do TPS com o número de nós até um ponto de saturação, onde limitações de recursos passam a restringir o ganho de desempenho.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{resultados/tps_vs_nodes.png}
+    \caption{TPS em função do número de nós.}
+\end{figure}
+
+\section{Conclusão}
+Os gráficos apresentados neste relatório fornecem uma visão abrangente do desempenho e da eficiência do sistema de blockchain para armazenamento em nuvem. As métricas analisadas demonstram que o sistema é escalável, eficiente em termos de recursos e confiável, com desempenho robusto em uma variedade de cenários.
+
+\end{document}

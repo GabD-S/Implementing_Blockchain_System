@@ -30,12 +30,15 @@
 
 ## Artefatos gerados
 - availability_vs_time.png
+- availability_vs_time_extended.png
 - bandwidth_vs_throughput.png
 - cpu_vs_load.png
 - forks_vs_propagation.png
 - heatmap_blocksize_interval.png
 - latency_cdf.png
-- latency_vs_txrate.png
-- scalability_users.png
+- latency_vs_txrate_main.png
+- latency_vs_txrate_sweep.png
+- scalability_users_enhanced.png
+- scalability_users_main.png
 - throughput_timeseries.png
 - tps_vs_nodes.png
