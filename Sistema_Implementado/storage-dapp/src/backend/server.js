@@ -5,11 +5,9 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import fs from 'fs'
 
-// ===== Configuração de paths =====
+// ===== Paths =====
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-
-// Pasta correta dos arquivos
 const FILES_DIR = path.join(__dirname, 'files')
 
 // ===== App =====
@@ -17,56 +15,61 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+// ===== SSE Clients =====
+let sseClients = []
+
+function broadcast(msg) {
+  sseClients.forEach(res => {
+    res.write(`data: ${msg.replace(/\n/g, '')}\n\n`)
+  })
+}
+
+// ===== SSE Endpoint =====
+app.get('/wormhole/logs', (req, res) => {
+  res.setHeader('Content-Type', 'text/event-stream')
+  res.setHeader('Cache-Control', 'no-cache')
+  res.setHeader('Connection', 'keep-alive')
+  res.flushHeaders()
+
+  sseClients.push(res)
+
+  req.on('close', () => {
+    sseClients = sseClients.filter(c => c !== res)
+  })
+})
+
 // ================================
 // SEND
 // ================================
 app.post('/wormhole/send', (req, res) => {
   const { filename } = req.body
-  if (!filename) {
-    return res.json({ ok: false, error: 'filename ausente' })
-  }
+  if (!filename) return res.json({ ok: false, error: 'filename ausente' })
 
   const fullPath = path.join(FILES_DIR, filename)
-
   if (!fs.existsSync(fullPath)) {
-    return res.json({
-      ok: false,
-      error: `Arquivo não encontrado: ${filename}`
-    })
+    return res.json({ ok: false, error: 'Arquivo não encontrado' })
   }
 
-  console.log(`📤 Enviando arquivo: ${fullPath}`)
+  broadcast(`📤 Enviando: ${filename}`)
 
   const proc = spawn('wormhole', ['send', fullPath])
-
-  let codeSent = false
+  let responded = false
 
   proc.stdout.on('data', data => {
     const text = data.toString()
     console.log(text)
+    broadcast(text)
 
-    // Captura o código real do wormhole
     const match = text.match(/wormhole receive\s+([^\s]+)/)
-
-    if (match && !codeSent) {
-      codeSent = true
-      const code = match[1].trim()
-
-      console.log(`✅ Código Wormhole capturado: ${code}`)
-
-      res.json({
-        ok: true,
-        code
-      })
+    if (match && !responded) {
+      responded = true
+      res.json({ ok: true, code: match[1].trim() })
     }
   })
 
   proc.stderr.on('data', data => {
-    console.error('wormhole stderr:', data.toString())
-  })
-
-  proc.on('close', code => {
-    console.log(`wormhole send finalizado (${code})`)
+    console.error(data.toString())
+    broadcast(`❌ ${data.toString()}`)
   })
 })
 
@@ -75,34 +78,34 @@ app.post('/wormhole/send', (req, res) => {
 // ================================
 app.post('/wormhole/receive', (req, res) => {
   const { code } = req.body
-  if (!code) {
-    return res.json({ ok: false, error: 'code ausente' })
-  }
+  if (!code) return res.json({ ok: false })
 
-  console.log(`📥 Recebendo com código: ${code}`)
+  broadcast(`📥 Recebendo com código ${code}`)
 
   const proc = spawn('wormhole', ['receive', code])
 
   proc.stdout.on('data', data => {
     const text = data.toString()
     console.log(text)
+    broadcast(text)
 
-    // Confirma automaticamente o download
     if (text.toLowerCase().includes('ok?')) {
       proc.stdin.write('y\n')
     }
   })
 
   proc.stderr.on('data', data => {
-    console.error('wormhole stderr:', data.toString())
+    console.error(data.toString())
+    broadcast(`❌ ${data.toString()}`)
   })
 
   proc.on('close', () => {
+    broadcast('✅ Transferência finalizada')
     res.json({ ok: true })
   })
 })
 
-// ================================
+// ===== Start =====
 app.listen(8088, () => {
   console.log('🚀 Wormhole backend em http://127.0.0.1:8088')
   console.log(`📂 Pasta de arquivos: ${FILES_DIR}`)
