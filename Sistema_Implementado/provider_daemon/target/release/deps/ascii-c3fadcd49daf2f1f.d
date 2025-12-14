@@ -1,0 +1,11 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/provider_daemon/target/release/deps/ascii-c3fadcd49daf2f1f.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_char.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_str.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_string.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/free_functions.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/provider_daemon/target/release/deps/libascii-c3fadcd49daf2f1f.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_char.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_str.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_string.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/free_functions.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/provider_daemon/target/release/deps/libascii-c3fadcd49daf2f1f.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_char.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_str.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_string.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/free_functions.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_char.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_str.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/ascii_string.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ascii-1.1.0/src/free_functions.rs:

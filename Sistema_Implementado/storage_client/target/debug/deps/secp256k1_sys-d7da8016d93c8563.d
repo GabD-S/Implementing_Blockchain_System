@@ -1,0 +1,10 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/secp256k1_sys-d7da8016d93c8563.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/macros.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/types.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/recovery.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libsecp256k1_sys-d7da8016d93c8563.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/macros.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/types.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/recovery.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libsecp256k1_sys-d7da8016d93c8563.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/macros.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/types.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/recovery.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/macros.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/types.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/secp256k1-sys-0.9.2/src/recovery.rs:

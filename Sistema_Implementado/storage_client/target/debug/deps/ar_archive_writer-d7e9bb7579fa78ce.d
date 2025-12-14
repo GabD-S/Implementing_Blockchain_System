@@ -1,0 +1,10 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/ar_archive_writer-d7e9bb7579fa78ce.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/alignment.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive_writer.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libar_archive_writer-d7e9bb7579fa78ce.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/alignment.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive_writer.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libar_archive_writer-d7e9bb7579fa78ce.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/alignment.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive_writer.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/alignment.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ar_archive_writer-0.2.0/src/archive_writer.rs:

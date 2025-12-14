@@ -1,0 +1,10 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/release/deps/ink_storage-4a734ed16c1ea067.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mapping.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/vec.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/release/deps/libink_storage-4a734ed16c1ea067.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mapping.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/vec.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/release/deps/libink_storage-4a734ed16c1ea067.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mapping.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/vec.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/mapping.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage-5.1.1/src/lazy/vec.rs:

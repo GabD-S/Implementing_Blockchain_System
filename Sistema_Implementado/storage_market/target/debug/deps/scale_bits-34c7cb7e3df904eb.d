@@ -1,0 +1,10 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/debug/deps/scale_bits-34c7cb7e3df904eb.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/bits.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/decode_iter.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/encode_iter.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/debug/deps/libscale_bits-34c7cb7e3df904eb.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/bits.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/decode_iter.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/encode_iter.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/bits/bits.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/decode_iter.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/scale-bits-0.5.0/src/scale/encode_iter.rs:

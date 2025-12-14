@@ -1,0 +1,15 @@
+[package]
+name = "storage_client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+subxt = { version = "0.37", features = ["substrate-compat"] }
+subxt-signer = { version = "0.37", features = ["subxt"] }
+tokio = { version = "1.38", features = ["full"] }
+anyhow = "1.0"
+parity-scale-codec = { version = "3.6", features = ["derive"] }
+hex = "0.4"
+blake2 = "0.10"
+sp-core = "34.0.0"
+sp-runtime = "39.0.0"

@@ -1,0 +1,9 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/wasm32-unknown-unknown/release/deps/ink_storage_traits-42b5f35bcb00b164.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/impls/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/storage.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/wasm32-unknown-unknown/release/deps/libink_storage_traits-42b5f35bcb00b164.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/impls/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/storage.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/wasm32-unknown-unknown/release/deps/libink_storage_traits-42b5f35bcb00b164.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/impls/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/storage.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/impls/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ink_storage_traits-5.1.1/src/storage.rs:

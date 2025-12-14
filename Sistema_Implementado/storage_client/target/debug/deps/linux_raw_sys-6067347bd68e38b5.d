@@ -1,0 +1,10 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/linux_raw_sys-6067347bd68e38b5.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/errno.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/general.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/ioctl.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/liblinux_raw_sys-6067347bd68e38b5.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/errno.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/general.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/ioctl.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/liblinux_raw_sys-6067347bd68e38b5.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/errno.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/general.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/ioctl.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/errno.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/general.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/linux-raw-sys-0.1.4/src/x86_64/ioctl.rs:

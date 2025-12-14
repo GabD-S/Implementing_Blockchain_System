@@ -1,0 +1,1 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/target/ink/release/metadata-gen: /home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_market/src/lib.rs /tmp/cargo-contract_bpkKUJ/.ink/metadata_gen/main.rs

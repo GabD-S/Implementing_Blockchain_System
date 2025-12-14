@@ -1,0 +1,9 @@
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/jsonrpsee_client_transport-6c16484b97a79e85.d: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/stream.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libjsonrpsee_client_transport-6c16484b97a79e85.rlib: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/stream.rs
+
+/home/gabriel_pc/cloud-storage-ns3/Sistema_Implementado/storage_client/target/debug/deps/libjsonrpsee_client_transport-6c16484b97a79e85.rmeta: /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/lib.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/mod.rs /home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/stream.rs
+
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/lib.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/mod.rs:
+/home/gabriel_pc/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/jsonrpsee-client-transport-0.22.5/src/ws/stream.rs:

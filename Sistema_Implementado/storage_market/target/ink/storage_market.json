@@ -1,0 +1,1160 @@
+{
+  "source": {
+    "hash": "0x83dfd21594d1dff3143c74295ac9b7ad5f54b2d54d95bb418557109554be38d1",
+    "language": "ink! 5.1.1",
+    "compiler": "rustc 1.94.0-nightly",
+    "build_info": {
+      "build_mode": "Debug",
+      "cargo_contract_version": "5.0.3",
+      "rust_toolchain": "nightly-x86_64-unknown-linux-gnu",
+      "wasm_opt_settings": {
+        "keep_debug_symbols": false,
+        "optimization_passes": "Z"
+      }
+    }
+  },
+  "contract": {
+    "name": "storage_market",
+    "version": "0.1.0",
+    "authors": [
+      "Gabriel <desousa054@gmail.com>"
+    ]
+  },
+  "image": null,
+  "spec": {
+    "constructors": [
+      {
+        "args": [],
+        "default": false,
+        "docs": [],
+        "label": "new",
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink_primitives",
+            "ConstructorResult"
+          ],
+          "type": 19
+        },
+        "selector": "0x9bae9d5e"
+      }
+    ],
+    "docs": [],
+    "environment": {
+      "accountId": {
+        "displayName": [
+          "AccountId"
+        ],
+        "type": 4
+      },
+      "balance": {
+        "displayName": [
+          "Balance"
+        ],
+        "type": 1
+      },
+      "blockNumber": {
+        "displayName": [
+          "BlockNumber"
+        ],
+        "type": 14
+      },
+      "chainExtension": {
+        "displayName": [
+          "ChainExtension"
+        ],
+        "type": 28
+      },
+      "hash": {
+        "displayName": [
+          "Hash"
+        ],
+        "type": 27
+      },
+      "maxEventTopics": 4,
+      "staticBufferSize": 16384,
+      "timestamp": {
+        "displayName": [
+          "Timestamp"
+        ],
+        "type": 0
+      }
+    },
+    "events": [
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "provider",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 4
+            }
+          }
+        ],
+        "docs": [],
+        "label": "ProviderRegistered",
+        "module_path": "storage_market::storage_market",
+        "signature_topic": "0x6358ac830bb95b3778df3095e10882aae737fb5f9dbce0a7b151d08f3c3ac488"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "deal_id",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "docs": [],
+        "label": "DealCreated",
+        "module_path": "storage_market::storage_market",
+        "signature_topic": "0xb12b396fb45cbdee36a4e1c91ad961deb3fd35262ed34f1c90ed133f6208a7bc"
+      },
+      {
+        "args": [
+          {
+            "docs": [],
+            "indexed": true,
+            "label": "deal_id",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "docs": [],
+        "label": "DealCompleted",
+        "module_path": "storage_market::storage_market",
+        "signature_topic": "0x4a6ed71198f44b2fefc81ef4041eda71e1c4cb378b1819a7136f680f98d7e280"
+      }
+    ],
+    "lang_error": {
+      "displayName": [
+        "ink",
+        "LangError"
+      ],
+      "type": 20
+    },
+    "messages": [
+      {
+        "args": [
+          {
+            "label": "capacity",
+            "type": {
+              "displayName": [
+                "u64"
+              ],
+              "type": 0
+            }
+          },
+          {
+            "label": "price_per_gb",
+            "type": {
+              "displayName": [
+                "u128"
+              ],
+              "type": 1
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "register_provider",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 21
+        },
+        "selector": "0x8f41699a"
+      },
+      {
+        "args": [
+          {
+            "label": "provider",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 4
+            }
+          },
+          {
+            "label": "file_cid",
+            "type": {
+              "displayName": [
+                "String"
+              ],
+              "type": 12
+            }
+          },
+          {
+            "label": "size",
+            "type": {
+              "displayName": [
+                "u64"
+              ],
+              "type": 0
+            }
+          },
+          {
+            "label": "duration",
+            "type": {
+              "displayName": [
+                "u64"
+              ],
+              "type": 0
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "create_deal",
+        "mutates": true,
+        "payable": true,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 22
+        },
+        "selector": "0x2dc73795"
+      },
+      {
+        "args": [
+          {
+            "label": "deal_id",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "complete_deal",
+        "mutates": true,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 21
+        },
+        "selector": "0x5fe338fc"
+      },
+      {
+        "args": [
+          {
+            "label": "who",
+            "type": {
+              "displayName": [
+                "AccountId"
+              ],
+              "type": 4
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "get_provider",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 23
+        },
+        "selector": "0x457c7444"
+      },
+      {
+        "args": [
+          {
+            "label": "deal_id",
+            "type": {
+              "displayName": [
+                "u32"
+              ],
+              "type": 14
+            }
+          }
+        ],
+        "default": false,
+        "docs": [],
+        "label": "get_deal",
+        "mutates": false,
+        "payable": false,
+        "returnType": {
+          "displayName": [
+            "ink",
+            "MessageResult"
+          ],
+          "type": 25
+        },
+        "selector": "0x9aafd970"
+      }
+    ]
+  },
+  "storage": {
+    "root": {
+      "layout": {
+        "struct": {
+          "fields": [
+            {
+              "layout": {
+                "root": {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x6a83c2b6",
+                              "ty": 0
+                            }
+                          },
+                          "name": "capacity"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x6a83c2b6",
+                              "ty": 1
+                            }
+                          },
+                          "name": "price_per_gb"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x6a83c2b6",
+                              "ty": 2
+                            }
+                          },
+                          "name": "active"
+                        }
+                      ],
+                      "name": "ProviderProfile"
+                    }
+                  },
+                  "root_key": "0x6a83c2b6",
+                  "ty": 3
+                }
+              },
+              "name": "providers"
+            },
+            {
+              "layout": {
+                "root": {
+                  "layout": {
+                    "struct": {
+                      "fields": [
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 4
+                            }
+                          },
+                          "name": "buyer"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 4
+                            }
+                          },
+                          "name": "provider"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 12
+                            }
+                          },
+                          "name": "file_cid"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 0
+                            }
+                          },
+                          "name": "size"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 0
+                            }
+                          },
+                          "name": "duration"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 1
+                            }
+                          },
+                          "name": "value"
+                        },
+                        {
+                          "layout": {
+                            "leaf": {
+                              "key": "0x63784c27",
+                              "ty": 2
+                            }
+                          },
+                          "name": "completed"
+                        }
+                      ],
+                      "name": "StorageDeal"
+                    }
+                  },
+                  "root_key": "0x63784c27",
+                  "ty": 13
+                }
+              },
+              "name": "deals"
+            },
+            {
+              "layout": {
+                "leaf": {
+                  "key": "0x00000000",
+                  "ty": 14
+                }
+              },
+              "name": "next_id"
+            },
+            {
+              "layout": {
+                "leaf": {
+                  "key": "0x00000000",
+                  "ty": 4
+                }
+              },
+              "name": "owner"
+            }
+          ],
+          "name": "StorageMarketContract"
+        }
+      },
+      "root_key": "0x00000000",
+      "ty": 18
+    }
+  },
+  "types": [
+    {
+      "id": 0,
+      "type": {
+        "def": {
+          "primitive": "u64"
+        }
+      }
+    },
+    {
+      "id": 1,
+      "type": {
+        "def": {
+          "primitive": "u128"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "type": {
+        "def": {
+          "primitive": "bool"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "K",
+            "type": 4
+          },
+          {
+            "name": "V",
+            "type": 7
+          },
+          {
+            "name": "KeyType",
+            "type": 8
+          }
+        ],
+        "path": [
+          "ink_storage",
+          "lazy",
+          "mapping",
+          "Mapping"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "type": 5,
+                "typeName": "[u8; 32]"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "types",
+          "AccountId"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "type": {
+        "def": {
+          "array": {
+            "len": 32,
+            "type": 6
+          }
+        }
+      }
+    },
+    {
+      "id": 6,
+      "type": {
+        "def": {
+          "primitive": "u8"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "name": "capacity",
+                "type": 0,
+                "typeName": "u64"
+              },
+              {
+                "name": "price_per_gb",
+                "type": 1,
+                "typeName": "u128"
+              },
+              {
+                "name": "active",
+                "type": 2,
+                "typeName": "bool"
+              }
+            ]
+          }
+        },
+        "path": [
+          "storage_market",
+          "storage_market",
+          "ProviderProfile"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "L",
+            "type": 9
+          },
+          {
+            "name": "R",
+            "type": 10
+          }
+        ],
+        "path": [
+          "ink_storage_traits",
+          "impls",
+          "ResolverKey"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "path": [
+          "ink_storage_traits",
+          "impls",
+          "AutoKey"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "ParentKey",
+            "type": 11
+          }
+        ],
+        "path": [
+          "ink_storage_traits",
+          "impls",
+          "ManualKey"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "type": {
+        "def": {
+          "tuple": []
+        }
+      }
+    },
+    {
+      "id": 12,
+      "type": {
+        "def": {
+          "primitive": "str"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "K",
+            "type": 14
+          },
+          {
+            "name": "V",
+            "type": 15
+          },
+          {
+            "name": "KeyType",
+            "type": 16
+          }
+        ],
+        "path": [
+          "ink_storage",
+          "lazy",
+          "mapping",
+          "Mapping"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "type": {
+        "def": {
+          "primitive": "u32"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "name": "buyer",
+                "type": 4,
+                "typeName": "AccountId"
+              },
+              {
+                "name": "provider",
+                "type": 4,
+                "typeName": "AccountId"
+              },
+              {
+                "name": "file_cid",
+                "type": 12,
+                "typeName": "String"
+              },
+              {
+                "name": "size",
+                "type": 0,
+                "typeName": "u64"
+              },
+              {
+                "name": "duration",
+                "type": 0,
+                "typeName": "u64"
+              },
+              {
+                "name": "value",
+                "type": 1,
+                "typeName": "Balance"
+              },
+              {
+                "name": "completed",
+                "type": 2,
+                "typeName": "bool"
+              }
+            ]
+          }
+        },
+        "path": [
+          "storage_market",
+          "storage_market",
+          "StorageDeal"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "L",
+            "type": 9
+          },
+          {
+            "name": "R",
+            "type": 17
+          }
+        ],
+        "path": [
+          "ink_storage_traits",
+          "impls",
+          "ResolverKey"
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "type": {
+        "def": {
+          "composite": {}
+        },
+        "params": [
+          {
+            "name": "ParentKey",
+            "type": 11
+          }
+        ],
+        "path": [
+          "ink_storage_traits",
+          "impls",
+          "ManualKey"
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "name": "providers",
+                "type": 3,
+                "typeName": "<Mapping<AccountId, ProviderProfile> as::ink::storage::traits::\nAutoStorableHint<::ink::storage::traits::ManualKey<3066200938u32,\n()>,>>::Type"
+              },
+              {
+                "name": "deals",
+                "type": 13,
+                "typeName": "<Mapping<u32, StorageDeal> as::ink::storage::traits::\nAutoStorableHint<::ink::storage::traits::ManualKey<659322979u32, ()\n>,>>::Type"
+              },
+              {
+                "name": "next_id",
+                "type": 14,
+                "typeName": "<u32 as::ink::storage::traits::AutoStorableHint<::ink::storage\n::traits::ManualKey<3564973321u32, ()>,>>::Type"
+              },
+              {
+                "name": "owner",
+                "type": 4,
+                "typeName": "<AccountId as::ink::storage::traits::AutoStorableHint<::ink::\nstorage::traits::ManualKey<1107841907u32, ()>,>>::Type"
+              }
+            ]
+          }
+        },
+        "path": [
+          "storage_market",
+          "storage_market",
+          "StorageMarketContract"
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 11
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 20
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 11
+          },
+          {
+            "name": "E",
+            "type": 20
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 1,
+                "name": "CouldNotReadInput"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "LangError"
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 2
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 20
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 2
+          },
+          {
+            "name": "E",
+            "type": 20
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 14
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 20
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 14
+          },
+          {
+            "name": "E",
+            "type": 20
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 24
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 20
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 24
+          },
+          {
+            "name": "E",
+            "type": 20
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 0,
+                "name": "None"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 7
+                  }
+                ],
+                "index": 1,
+                "name": "Some"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 7
+          }
+        ],
+        "path": [
+          "Option"
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "fields": [
+                  {
+                    "type": 26
+                  }
+                ],
+                "index": 0,
+                "name": "Ok"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 20
+                  }
+                ],
+                "index": 1,
+                "name": "Err"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 26
+          },
+          {
+            "name": "E",
+            "type": 20
+          }
+        ],
+        "path": [
+          "Result"
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "type": {
+        "def": {
+          "variant": {
+            "variants": [
+              {
+                "index": 0,
+                "name": "None"
+              },
+              {
+                "fields": [
+                  {
+                    "type": 15
+                  }
+                ],
+                "index": 1,
+                "name": "Some"
+              }
+            ]
+          }
+        },
+        "params": [
+          {
+            "name": "T",
+            "type": 15
+          }
+        ],
+        "path": [
+          "Option"
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "type": {
+        "def": {
+          "composite": {
+            "fields": [
+              {
+                "type": 5,
+                "typeName": "[u8; 32]"
+              }
+            ]
+          }
+        },
+        "path": [
+          "ink_primitives",
+          "types",
+          "Hash"
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "type": {
+        "def": {
+          "variant": {}
+        },
+        "path": [
+          "ink_env",
+          "types",
+          "NoChainExtension"
+        ]
+      }
+    }
+  ],
+  "version": 5
+}
